@@ -12,3 +12,6 @@ https://dbdiagram.io/d/60b676e4b29a09603d178524
 
 ## STRETCH ERD 
 https://dbdiagram.io/d/60b6c172b29a09603d178df3
+
+# WIREFRAME 
+https://lucid.app/lucidchart/invitations/accept/inv_3298afb3-9a1d-41e8-ad58-e204775bfb16
