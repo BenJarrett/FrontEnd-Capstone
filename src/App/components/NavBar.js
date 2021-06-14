@@ -39,6 +39,15 @@ const NavBar = () => {
             <NavItem>
               <Link className="nav-link" to="/add-products">Add Product</Link>
             </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/favorites">Favorites</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/staff">Staff</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/user-list">Current List</Link>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
