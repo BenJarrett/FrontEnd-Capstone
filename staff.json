@@ -1,112 +1,112 @@
 {
-  "-Mbd3ggRrXuwsHpUvt3z": {
-    "id": 1,
-    "first_name": "Kaja",
-    "firebaseKey": "-Mbd3ggRrXuwsHpUvt3z",
-    "email": "koregan0@drupal.org",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FKaja.jpg?alt=media&token=d85d24e8-f250-40a5-a573-cec1eb831c67",
-    "adminAccess": false,
-    "lastName": "O'Regan",
-    "title": "VP Product Management",
-    "uid": ""
+  "-Mbd3ggRrXuwsHpUvt3z" : {
+    "adminAccess" : false,
+    "email" : "koregan0@drupal.org",
+    "firebaseKey" : "-Mbd3ggRrXuwsHpUvt3z",
+    "first_name" : "Kaja",
+    "id" : 1,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FKaja.jpg?alt=media&token=d85d24e8-f250-40a5-a573-cec1eb831c67",
+    "lastName" : "O'Regan",
+    "title" : "VP Product Management",
+    "uid" : ""
   },
-  "-Mbd3ggT3_VQJ4RspOY9": {
-    "id": 2,
-    "first_name": "Nicole",
-    "firebaseKey": "-Mbd3ggT3_VQJ4RspOY9",
-    "email": "syon1@foxnews.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FNicole.jpg?alt=media&token=ff1cdad6-02f4-4700-bbb3-5a2b79a1e057",
-    "adminAccess": false,
-    "lastName": "Yon",
-    "title": "Project Manager",
-    "uid": ""
+  "-Mbd3ggT3_VQJ4RspOY9" : {
+    "adminAccess" : false,
+    "email" : "syon1@foxnews.com",
+    "firebaseKey" : "-Mbd3ggT3_VQJ4RspOY9",
+    "first_name" : "Nicole",
+    "id" : 2,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FNicole.jpg?alt=media&token=ff1cdad6-02f4-4700-bbb3-5a2b79a1e057",
+    "lastName" : "Yon",
+    "title" : "Project Manager",
+    "uid" : ""
   },
-  "-Mbd3ggV-FwxbgkR3uTp": {
-    "id": 3,
-    "first_name": "Valenka",
-    "firebaseKey": "-Mbd3ggV-FwxbgkR3uTp",
-    "email": "vdhooge2@scientificamerican.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FValenka.jpg?alt=media&token=d5c5cd0e-4c0b-4e52-b69d-32839b554164",
-    "adminAccess": true,
-    "lastName": "D'Hooge",
-    "title": "VP Product Management",
-    "uid": ""
+  "-Mbd3ggV-FwxbgkR3uTp" : {
+    "adminAccess" : true,
+    "email" : "vdhooge2@scientificamerican.com",
+    "firebaseKey" : "-Mbd3ggV-FwxbgkR3uTp",
+    "first_name" : "Valenka",
+    "id" : 3,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FValenka.jpg?alt=media&token=d5c5cd0e-4c0b-4e52-b69d-32839b554164",
+    "lastName" : "D'Hooge",
+    "title" : "VP Product Management",
+    "uid" : ""
   },
-  "-Mbd3ggWDUF-JGGNeibd": {
-    "id": 4,
-    "first_name": "Jacob",
-    "firebaseKey": "-Mbd3ggWDUF-JGGNeibd",
-    "email": "ghargraves3@cloudflare.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FJacob.jpg?alt=media&token=0cfd7f05-8e82-4f69-9f3f-2d523678753a",
-    "adminAccess": false,
-    "lastName": "Hargraves",
-    "title": "Safety Technician IV",
-    "uid": ""
+  "-Mbd3ggWDUF-JGGNeibd" : {
+    "adminAccess" : false,
+    "email" : "ghargraves3@cloudflare.com",
+    "firebaseKey" : "-Mbd3ggWDUF-JGGNeibd",
+    "first_name" : "Jacob",
+    "id" : 4,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FJacob.jpg?alt=media&token=0cfd7f05-8e82-4f69-9f3f-2d523678753a",
+    "lastName" : "Hargraves",
+    "title" : "Safety Technician IV",
+    "uid" : ""
   },
-  "-Mbd3ggY84GU0uo8V7AW": {
-    "id": 5,
-    "first_name": "Lawry",
-    "firebaseKey": "-Mbd3ggY84GU0uo8V7AW",
-    "email": "ldowry4@rakuten.co.jp",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FJacob.jpg?alt=media&token=0cfd7f05-8e82-4f69-9f3f-2d523678753a",
-    "adminAccess": false,
-    "lastName": "Dowry",
-    "title": "IT",
-    "uid": ""
+  "-Mbd3ggY84GU0uo8V7AW" : {
+    "adminAccess" : false,
+    "email" : "ldowry4@rakuten.co.jp",
+    "firebaseKey" : "-Mbd3ggY84GU0uo8V7AW",
+    "first_name" : "Lawry",
+    "id" : 5,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FJacob.jpg?alt=media&token=0cfd7f05-8e82-4f69-9f3f-2d523678753a",
+    "lastName" : "Dowry",
+    "title" : "IT",
+    "uid" : ""
   },
-  "-Mbd3ggZbYIgH3k3x275": {
-    "id": 6,
-    "first_name": "Marjy",
-    "firebaseKey": "-Mbd3ggZbYIgH3k3x275",
-    "email": "mfosken5@lycos.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FMarjy.jpg?alt=media&token=44f4d431-7c49-47cd-9fbc-136efee4b76e",
-    "adminAccess": false,
-    "lastName": "Fosken",
-    "title": "Programmer Analyst IV",
-    "uid": ""
+  "-Mbd3ggZbYIgH3k3x275" : {
+    "adminAccess" : false,
+    "email" : "mfosken5@lycos.com",
+    "firebaseKey" : "-Mbd3ggZbYIgH3k3x275",
+    "first_name" : "Marjy",
+    "id" : 6,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FMarjy.jpg?alt=media&token=44f4d431-7c49-47cd-9fbc-136efee4b76e",
+    "lastName" : "Fosken",
+    "title" : "Programmer Analyst IV",
+    "uid" : ""
   },
-  "-Mbd3gg_dnoVRBb5Tn1L": {
-    "id": 7,
-    "first_name": "Ivie",
-    "firebaseKey": "-Mbd3gg_dnoVRBb5Tn1L",
-    "email": "ineames6@tripadvisor.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FIvie.jpg?alt=media&token=2278c1c5-7fd3-4895-8dc2-eeb6b9f51a6e",
-    "adminAccess": true,
-    "lastName": "Neames",
-    "title": "Sales Assistant",
-    "uid": ""
+  "-Mbd3gg_dnoVRBb5Tn1L" : {
+    "adminAccess" : true,
+    "email" : "ineames6@tripadvisor.com",
+    "firebaseKey" : "-Mbd3gg_dnoVRBb5Tn1L",
+    "first_name" : "Ivie",
+    "id" : 7,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FIvie.jpg?alt=media&token=2278c1c5-7fd3-4895-8dc2-eeb6b9f51a6e",
+    "lastName" : "Neames",
+    "title" : "Sales Assistant",
+    "uid" : ""
   },
-  "-Mbd3ggbjrm_Ugbp_-NT": {
-    "id": 8,
-    "first_name": "Germaine",
-    "firebaseKey": "-Mbd3ggbjrm_Ugbp_-NT",
-    "email": "gsutherington7@hostgator.com",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FGermaine.jpg?alt=media&token=52381a2a-7c3e-43bd-afe1-e91ec4ad2580",
-    "adminAccess": false,
-    "lastName": "Sutherington",
-    "title": "Marketing Assistant",
-    "uid": ""
+  "-Mbd3ggbjrm_Ugbp_-NT" : {
+    "adminAccess" : false,
+    "email" : "gsutherington7@hostgator.com",
+    "firebaseKey" : "-Mbd3ggbjrm_Ugbp_-NT",
+    "first_name" : "Germaine",
+    "id" : 8,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FGermaine.jpg?alt=media&token=52381a2a-7c3e-43bd-afe1-e91ec4ad2580",
+    "lastName" : "Sutherington",
+    "title" : "Marketing Assistant",
+    "uid" : ""
   },
-  "-Mbd3ggcfNsp4-s2Dyp8": {
-    "id": 9,
-    "first_name": "Haleigh",
-    "firebaseKey": "-Mbd3ggcfNsp4-s2Dyp8",
-    "email": "hdunabie8@de.vu",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FHaleigh.jpg?alt=media&token=dce628cf-2f37-45dc-afaa-44c5e5570c53",
-    "adminAccess": true,
-    "lastName": "Dunabie",
-    "title": "Legal Assistant",
-    "uid": ""
+  "-Mbd3ggcfNsp4-s2Dyp8" : {
+    "adminAccess" : true,
+    "email" : "hdunabie8@de.vu",
+    "firebaseKey" : "-Mbd3ggcfNsp4-s2Dyp8",
+    "first_name" : "Haleigh",
+    "id" : 9,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FHaleigh.jpg?alt=media&token=dce628cf-2f37-45dc-afaa-44c5e5570c53",
+    "lastName" : "Dunabie",
+    "title" : "Legal Assistant",
+    "uid" : ""
   },
-  "-Mbd3ggdtCLsJPXHf4iq": {
-    "id": 10,
-    "first_name": "Rutter",
-    "firebaseKey": "-Mbd3ggdtCLsJPXHf4iq",
-    "email": "rbompas9@miitbeian.gov.cn",
-    "image": "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FRutter.jpg?alt=media&token=c36646a5-0d34-4d74-a5b6-4a45581af3e8",
-    "adminAccess": false,
-    "lastName": "Bompas",
-    "title": "Community Outreach Specialist",
-    "uid": ""
+  "-Mbd3ggdtCLsJPXHf4iq" : {
+    "adminAccess" : false,
+    "email" : "rbompas9@miitbeian.gov.cn",
+    "firebaseKey" : "-Mbd3ggdtCLsJPXHf4iq",
+    "first_name" : "Rutter",
+    "id" : 10,
+    "image" : "https://firebasestorage.googleapis.com/v0/b/front-end-capstone-49bb2.appspot.com/o/Staff%2FRutter.jpg?alt=media&token=c36646a5-0d34-4d74-a5b6-4a45581af3e8",
+    "lastName" : "Bompas",
+    "title" : "Community Outreach Specialist",
+    "uid" : ""
   }
 }

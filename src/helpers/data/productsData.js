@@ -15,7 +15,7 @@ const addProduct = (product) => new Promise((resolve, reject) => {
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios
-        .patch(`${dbURL}/product/${response.data.name}.json`, body)
+        .patch(`${dbURL}/products/${response.data.name}.json`, body)
         .then(() => {
           getProducts().then((productArray) => resolve(productArray));
         });
