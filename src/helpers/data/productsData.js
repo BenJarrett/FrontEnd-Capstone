@@ -15,6 +15,12 @@ const getOnSaleProducts = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getChosenStaffPicks = () => new Promise((resolve, reject) => {
+  axios.get(`${dbURL}/products.json?orderBy="staffPick"&equalTo=true`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 const addProduct = (product) => new Promise((resolve, reject) => {
   axios
     .post(`${dbURL}/products.json`, product)
@@ -46,5 +52,6 @@ export {
   addProduct,
   deleteProduct,
   updateProduct,
-  getOnSaleProducts
+  getOnSaleProducts,
+  getChosenStaffPicks
 };

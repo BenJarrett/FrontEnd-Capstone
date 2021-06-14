@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+// import ProudctsCard from '../App/components/ProductCard';
+import { getChosenStaffPicks } from '../helpers/data/productsData';
+import StaffPickCard from '../App/components/StaffPickCard';
+// import { useState } from 'react';
 
-export default function GetStaffPicks() {
+function ChosenStaffPicks({
+  firebaseKey,
+  image,
+  price,
+  name,
+}) {
+  const [staffPicks, setStaffPicks] = useState([]);
+  useEffect(() => {
+    getChosenStaffPicks().then((response) => setStaffPicks(response));
+  }, []);
   return (
-    <div>
-      <h1>This page show the product cards of the staff picks boolean no matter who is on the website. Whether they are logged in or not.
-      </h1>
-    </div>
+    <div className="this">
+    <h1>Products</h1>
+      <div className="card-container">
+       <StaffPickCard
+       firebaseKey={firebaseKey}
+       image={image}
+       price={price}
+       name={name}
+       setStaffPicks={setStaffPicks}
+       staffPicks={staffPicks}
+       />
+       </div>
+     </div>
   );
 }
+
+ChosenStaffPicks.propTypes = {
+  firebaseKey: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  staffPicks: PropTypes.array,
+  setStaffPicks: PropTypes.func
+};
+
+export default ChosenStaffPicks;
