@@ -1,12 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import ProudctsCard from '../App/components/ProductCard';
+import { getProducts } from '../helpers/data/productsData';
+// import { useState } from 'react';
 
-export default function GetProducts() {
+function Products({
+  firebaseKey,
+  image,
+  price,
+  name,
+}) {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProducts().then((response) => setProducts(response));
+  }, []);
   return (
-    <div>
-      <h1>You are on the all Products Page. This will be shown for anyone who visists the website, whether they are not a user, are a user, or an admin.
-      </h1>
-      < ProudctsCard />
-    </div>
+    <div className="this">
+    <h1>Products</h1>
+      <div className="card-container">
+       <ProudctsCard
+       firebaseKey={firebaseKey}
+       image={image}
+       price={price}
+       name={name}
+       setProducts={setProducts}
+       products={products}
+       />
+       </div>
+     </div>
   );
 }
+
+Products.propTypes = {
+  firebaseKey: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  products: PropTypes.array,
+  setProducts: PropTypes.func
+};
+
+export default Products;
