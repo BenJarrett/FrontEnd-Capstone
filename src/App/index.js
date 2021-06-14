@@ -5,6 +5,7 @@ import firebaseConfig from '../helpers/apiKeys';
 import './App.scss';
 // import ProductsForm from './components/ProductForm';
 import NavBar from './components/NavBar';
+import Routes from '../helpers/Routes';
 
 function App() {
   firebase.initializeApp(firebaseConfig);
@@ -13,7 +14,7 @@ function App() {
     <>
       <Router>
       <NavBar />
-      <h1>Hello World!</h1>
+      <Routes />
       </Router>
     </>
   );
