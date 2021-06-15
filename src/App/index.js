@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import firebase from 'firebase';
-import firebaseConfig from '../helpers/apiKeys';
 import './App.scss';
 // import ProductsForm from './components/ProductForm';
 import NavBar from './components/NavBar';
 import Routes from '../helpers/Routes';
 
 function App() {
-  firebase.initializeApp(firebaseConfig);
+  const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed) {
+        // something to happen
+        const userInfoObj = {
+          fullName: authed.displayName,
+          profileImage: authed.photoURL,
+          uid: authed.uid,
+          user: authed.email.split('@gmail.com')[0]
+        };
+        setUser(userInfoObj);
+      } else if (user || user === null) {
+        // do something else
+        setUser(false);
+      }
+    });
+  });
   return (
     <>
       <Router>
-      <NavBar />
+      <NavBar user={user} />
       <Routes />
       </Router>
     </>

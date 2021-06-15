@@ -6,13 +6,14 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  // Button,
+  Button,
   NavbarBrand
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { signInUser, signOutUser } from '../../helpers/auth';
 // import { signInUser, signOutUser } from '../../helpers/auth';
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -48,6 +49,18 @@ const NavBar = () => {
             <NavItem>
               <Link className="nav-link" to="/user-list">Current List</Link>
             </NavItem>
+            <NavItem>
+              {
+                user !== null
+                && <NavItem>
+                  {
+                    user
+                      ? <Button color='info' onClick={signOutUser}>Sign Out</Button>
+                      : <Button color='info' onClick={signInUser}>Sign In</Button>
+                  }
+                </NavItem >
+                }
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
@@ -56,7 +69,7 @@ const NavBar = () => {
 };
 
 NavBar.propTypes = {
-  admin: PropTypes.any
+  user: PropTypes.any
 };
 
 export default NavBar;
