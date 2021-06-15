@@ -49,7 +49,6 @@ const StaffCard = ({
         key={staffInfo.firebaseKey}>
           <CardBody>
          <CardTitle tag="h5">First Name: {staffInfo.first_name}</CardTitle>
-         <hr></hr>
          <CardTitle tag="h5"> Last Name: {staffInfo.lastName}</CardTitle>
          <hr></hr>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Email: {staffInfo.email}</CardSubtitle>
