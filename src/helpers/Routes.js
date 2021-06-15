@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import HomePage from '../views/Home';
 import AddProduct from '../views/AdminAddProducts';
 import GetFavoriteProducts from '../views/UserFavotires';
@@ -28,7 +28,3 @@ export default function Routes() {
     </div>
   );
 }
-
-Routes.propTypes = {
-  admin: PropTypes.any
-};

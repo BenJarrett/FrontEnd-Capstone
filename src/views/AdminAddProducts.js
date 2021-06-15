@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+// import PropTypes from 'prop-types';
+import ProductsForm from '../App/components/ProductForm';
+import { getProducts } from '../helpers/data/productsData';
 
-export default function AddProduct() {
+function AddProduct() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProducts().then((response) => setProducts(response));
+  }, []);
   return (
-    <div>
-      <h1>You are on the AdminAddProductsPage</h1>
-    </div>
+    <>
+      <ProductsForm setProducts={setProducts} products={products} />
+    </>
   );
 }
+
+export default AddProduct;

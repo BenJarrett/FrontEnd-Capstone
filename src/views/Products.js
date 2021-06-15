@@ -12,7 +12,9 @@ function Products({
 }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    getProducts().then((response) => setProducts(response));
+    getProducts().then((response) => {
+      setProducts(response);
+    });
   }, []);
   return (
     <div className="this">

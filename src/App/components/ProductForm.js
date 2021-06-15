@@ -238,7 +238,7 @@ ProductsForm.propTypes = {
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
   firebaseKey: PropTypes.string,
-  setProducts: PropTypes.string,
+  setProducts: PropTypes.func
 };
 
 export default ProductsForm;
