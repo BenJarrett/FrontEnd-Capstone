@@ -17,6 +17,7 @@ const WishlistForm = ({
   sFAisle,
   sFBay,
   sFLevel,
+  productId,
   firebaseKey,
 
 }) => {
@@ -28,6 +29,7 @@ const WishlistForm = ({
     sFBay: sFBay || '',
     sFLevel: sFLevel || '',
     uid: user.uid || null,
+    productId: productId || null,
     firebaseKey: firebaseKey || null
 
   });
@@ -70,6 +72,7 @@ WishlistForm.propTypes = {
   sFLevel: PropTypes.string,
   user: PropTypes.any,
   firebaseKey: PropTypes.string,
+  productId: PropTypes.string,
   setProducts: PropTypes.func
 };
 

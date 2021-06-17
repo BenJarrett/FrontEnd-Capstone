@@ -19,6 +19,7 @@ const ProudctsCard = ({
   name,
   image,
   price,
+  productId,
   setProducts,
 }) => {
   const [editing, setEditing] = useState(false);
@@ -82,6 +83,7 @@ const ProudctsCard = ({
          formTitle='Add To Wishlist'
          setProducts={setProducts}
          firebaseKey={firebaseKey}
+         productId={productId}
          price={price}
          image={image}
          name={name}
@@ -99,6 +101,7 @@ ProudctsCard.propTypes = {
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
+  productId: PropTypes.string,
   setProducts: PropTypes.func,
 };
 export default ProudctsCard;

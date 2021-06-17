@@ -21,6 +21,7 @@ function Products({
        <ProudctsCard
        key={productInfo.firebaseKey}
        firebaseKey={productInfo.firebaseKey}
+       productId={productInfo.firebaseKey}
        image={productInfo.image}
        price={productInfo.price}
        name={productInfo.name}
