@@ -51,6 +51,7 @@ const ProudctsCard = ({
          <CardSubtitle tag="h6" className="mb-2 text-muted">price: {productInfo.price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
+         <Button>Add Item to List</Button>
          <CardBody>
          { editView(productInfo.firebaseKey) }
          {

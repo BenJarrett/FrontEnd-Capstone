@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
-        // something to happen
         const userInfoObj = {
           fullName: authed.displayName,
           profileImage: authed.photoURL,
@@ -21,7 +20,6 @@ function App() {
         };
         setUser(userInfoObj);
       } else if (user || user === null) {
-        // do something else
         setUser(false);
       }
     });
