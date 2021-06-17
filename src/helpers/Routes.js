@@ -6,10 +6,10 @@ import AddProduct from '../views/AdminAddProducts';
 import GetFavoriteProducts from '../views/UserFavotires';
 import GetStaff from '../views/Staff';
 // import GetStaffPicks from '../views/StaffPicks';
-import GetUserList from '../views/UserList';
 import Products from '../views/Products';
 import OnSaleProducts from '../views/OnSale';
 import ChosenStaffPicks from '../views/StaffPicks';
+import CurrentList from '../views/UserList';
 
 export default function Routes({
   user
@@ -27,7 +27,9 @@ export default function Routes({
         <Route path='/on-sale' component={OnSaleProducts} />
         <Route path='/staff' component={GetStaff} />
         <Route path='/staff-picks' component={ChosenStaffPicks} />
-        <Route path='/user-list' component={GetUserList} />
+        <Route exact path='/user-list' component={() => <CurrentList
+        user={user}
+      /> } />
       </Switch>
     </div>
   );

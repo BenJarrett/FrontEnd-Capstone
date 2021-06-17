@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Routes from '../helpers/Routes';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {

@@ -1,10 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { getWishlist } from '../helpers/data/UserWishListData';
+import WishlistCard from '../App/components/WishListCard';
 
-export default function GetUserList() {
+function CurrentList({
+  firebaseKey,
+  image,
+  price,
+  name,
+  user
+}) {
+  const [wishlists, setWishlists] = useState([]);
+  useEffect(() => {
+    getWishlist(user).then((response) => {
+      setWishlists(response);
+    });
+  }, []);
+
   return (
-    <div>
-      <h1>This page will show the cards of the products that user has added to their list while they are logged in.
-      </h1>
-    </div>
+    <div className="this">
+    <h1>Your List</h1>
+      <div className="card-container">
+       <WishlistCard
+       firebaseKey={firebaseKey}
+       image={image}
+       price={price}
+       name={name}
+       user={user}
+       setWishlists={setWishlists}
+       wishlists={wishlists}
+       />
+       </div>
+     </div>
   );
 }
+
+CurrentList.propTypes = {
+  firebaseKey: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  user: PropTypes.any,
+};
+
+export default CurrentList;

@@ -22,7 +22,14 @@ const addProductToWishList = (obj, user) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const deleteWishList = (firebaseKey, user) => new Promise((resolve, reject) => {
+  axios.delete(`${dbURL}/wishlist/${firebaseKey}.json`)
+    .then(() => getWishlist(user).then((resp) => resolve(resp)))
+    .catch((error) => reject(error));
+});
+
 export {
   addProductToWishList,
-  getWishlist
+  getWishlist,
+  deleteWishList
 };
