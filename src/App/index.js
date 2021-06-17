@@ -23,12 +23,12 @@ function App() {
         setUser(false);
       }
     });
-  });
+  }, []);
   return (
     <>
       <Router>
       <NavBar user={user} />
-      <Routes />
+      <Routes user={user} />
       </Router>
     </>
   );

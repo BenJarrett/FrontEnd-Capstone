@@ -9,7 +9,7 @@ import {
   CardSubtitle
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { addStaffMember, removeStaffMember } from '../../helpers/data/staffData';
+import { removeStaffMember } from '../../helpers/data/staffData';
 import StaffForm from './StaffForm';
 
 const StaffCard = ({
@@ -26,20 +26,15 @@ const StaffCard = ({
         removeStaffMember(fbKey)
           .then(setStaff);
         break;
-      case 'add':
-        addStaffMember(fbKey)
-          .then(setStaff);
-        break;
       case 'edit':
         setEditing((prevState) => !prevState);
         break;
       default:
-        console.warn('No Projects');
+        console.warn('No Staff Members');
     }
   };
   const editView = (fbKey) => (
     <div>
-      <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'add')}>Add Staff Member</Button>
       <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Remove Staff Member</Button>
       <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : 'Edit Product'}
@@ -64,12 +59,12 @@ const StaffCard = ({
          {
          editing && <StaffForm
          formTitle='Edit Staff Member'
-         setStaff={setStaff}
          firebaseKey={staffInfo.firebaseKey}
          first_name={staffInfo.first_name}
          lastName={staffInfo.lastName}
          title={staffInfo.title}
          email={staffInfo.email}
+         setStaff={setStaff}
          />
          }
          </CardBody>
@@ -81,11 +76,12 @@ const StaffCard = ({
 StaffCard.propTypes = {
   firebaseKey: PropTypes.string,
   staff: PropTypes.array,
-  setStaff: PropTypes.func,
   image: PropTypes.string,
   first_name: PropTypes.string,
   lastName: PropTypes.string,
   title: PropTypes.string,
-  email: PropTypes.string
+  email: PropTypes.string,
+  setStaff: PropTypes.func,
+
 };
 export default StaffCard;

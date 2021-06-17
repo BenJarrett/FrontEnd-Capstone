@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProudctsCard from '../App/components/ProductCard';
 import { getProducts } from '../helpers/data/productsData';
-// import { useState } from 'react';
 
 function Products({
   firebaseKey,
   image,
   price,
   name,
+  user
 }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -25,6 +25,7 @@ function Products({
        image={image}
        price={price}
        name={name}
+       user={user}
        setProducts={setProducts}
        products={products}
        />
@@ -39,6 +40,7 @@ Products.propTypes = {
   price: PropTypes.string,
   name: PropTypes.string,
   products: PropTypes.array,
+  user: PropTypes.any,
   setProducts: PropTypes.func
 };
 
