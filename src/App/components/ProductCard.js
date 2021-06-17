@@ -14,8 +14,11 @@ import ProductsForm from './ProductForm';
 import WishlistForm from './WishListPopUp';
 
 const ProudctsCard = ({
+  firebaseKey,
   user,
-  products,
+  name,
+  image,
+  price,
   setProducts,
 }) => {
   const [editing, setEditing] = useState(false);
@@ -52,54 +55,50 @@ const ProudctsCard = ({
     </div>
   );
   return (
-    products.map((productInfo) => (
-        <Card
-        key={productInfo.firebaseKey}>
+        <Card>
           <CardBody>
-         <CardTitle tag="h5">Product Name: {productInfo.name}</CardTitle>
+         <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {productInfo.price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
          </CardBody>
-         <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
+         <img width="100%" src={image} className="photo" alt="Card image cap" />
                     <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} >Add to Favorites</Button>
          <CardBody>
-         { editView(productInfo.firebaseKey) }
-         { user && userView(productInfo.firebaseKey) }
+         { editView(firebaseKey) }
+         { user && userView(firebaseKey) }
 
          {
          editing && <ProductsForm
          formTitle='Edit Product'
          setProducts={setProducts}
-         firebaseKey={productInfo.firebaseKey}
-         price={productInfo.price}
-         image={productInfo.image}
-         name={productInfo.name}
+         firebaseKey={firebaseKey}
+         price={price}
+         image={image}
+         name={name}
          />
          }
           {
          adding && <WishlistForm
          formTitle='Add To Wishlist'
          setProducts={setProducts}
-         firebaseKey={productInfo.firebaseKey}
-         price={productInfo.price}
-         image={productInfo.image}
-         name={productInfo.name}
+         firebaseKey={firebaseKey}
+         price={price}
+         image={image}
+         name={name}
          user={user}
          />
          }
          </CardBody>
          </Card>
-    ))
   );
 };
 
 ProudctsCard.propTypes = {
   firebaseKey: PropTypes.string,
-  products: PropTypes.array,
+  user: PropTypes.any,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
   setProducts: PropTypes.func,
-  user: PropTypes.any
-  // price: PropTypes.string,
-  // name: PropTypes.string,
-  // image: PropTypes.string,
 };
 export default ProudctsCard;

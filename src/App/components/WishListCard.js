@@ -12,8 +12,11 @@ import PropTypes from 'prop-types';
 import { deleteWishList } from '../../helpers/data/UserWishListData';
 
 const WishlistCard = ({
+  firebaseKey,
   user,
-  wishlists,
+  name,
+  image,
+  price,
   setWishlists
 
 }) => {
@@ -34,31 +37,27 @@ const WishlistCard = ({
   );
 
   return (
-    wishlists.map((productInfo) => (
-        <Card
-        key={productInfo.firebaseKey}>
+        <Card>
           <CardBody>
-         <CardTitle tag="h5">Product Name: {productInfo.name}</CardTitle>
+         <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {productInfo.price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
          </CardBody>
-         <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
+         <img width="100%" src={image} className="photo" alt="Card image cap" />
                     <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} >Add to Favorites</Button>
          <CardBody>
-         { deleteCardView(productInfo.firebaseKey) }
+         { deleteCardView(firebaseKey) }
          </CardBody>
          </Card>
-    ))
   );
 };
 
 WishlistCard.propTypes = {
   firebaseKey: PropTypes.string,
-  products: PropTypes.array,
-  setProducts: PropTypes.func,
-  user: PropTypes.any
-  // price: PropTypes.string,
-  // name: PropTypes.string,
-  // image: PropTypes.string,
+  user: PropTypes.any,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  setWishlists: PropTypes.func
 };
 export default WishlistCard;

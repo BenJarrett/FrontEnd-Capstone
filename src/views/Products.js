@@ -4,10 +4,6 @@ import ProudctsCard from '../App/components/ProductCard';
 import { getProducts } from '../helpers/data/productsData';
 
 function Products({
-  firebaseKey,
-  image,
-  price,
-  name,
   user
 }) {
   const [products, setProducts] = useState([]);
@@ -16,32 +12,31 @@ function Products({
       setProducts(response);
     });
   }, []);
+
   return (
     <div className="this">
-    <h1>Products</h1>
+    <h1>All Products</h1>
       <div className="card-container">
+      {products.map((productInfo) => (
        <ProudctsCard
-       firebaseKey={firebaseKey}
-       image={image}
-       price={price}
-       name={name}
+       key={productInfo.firebaseKey}
+       firebaseKey={productInfo.firebaseKey}
+       image={productInfo.image}
+       price={productInfo.price}
+       name={productInfo.name}
        user={user}
        setProducts={setProducts}
        products={products}
        />
+      ))}
        </div>
      </div>
   );
 }
 
 Products.propTypes = {
-  firebaseKey: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.string,
-  name: PropTypes.string,
-  products: PropTypes.array,
   user: PropTypes.any,
-  setProducts: PropTypes.func
+
 };
 
 export default Products;

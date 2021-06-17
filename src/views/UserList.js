@@ -4,10 +4,6 @@ import { getWishlist } from '../helpers/data/UserWishListData';
 import WishlistCard from '../App/components/WishListCard';
 
 function CurrentList({
-  firebaseKey,
-  image,
-  price,
-  name,
   user
 }) {
   const [wishlists, setWishlists] = useState([]);
@@ -20,26 +16,25 @@ function CurrentList({
   return (
     <div className="this">
     <h1>Your List</h1>
-      <div className="card-container">
+      <div className="wishlist-container">
+      {wishlists.map((productInfo) => (
        <WishlistCard
-       firebaseKey={firebaseKey}
-       image={image}
-       price={price}
-       name={name}
+       key={productInfo.firebaseKey}
+       firebaseKey={productInfo.firebaseKey}
+       image={productInfo.image}
+       price={productInfo.price}
+       name={productInfo.name}
        user={user}
        setWishlists={setWishlists}
        wishlists={wishlists}
        />
+      ))}
        </div>
      </div>
   );
 }
 
 CurrentList.propTypes = {
-  firebaseKey: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.string,
-  name: PropTypes.string,
   user: PropTypes.any,
 };
 
