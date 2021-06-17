@@ -9,18 +9,6 @@ const getStaffList = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-// const getOnSaleProducts = () => new Promise((resolve, reject) => {
-//   axios.get(`${dbURL}/products.json?orderBy="onSale"&equalTo=true`)
-//     .then((response) => resolve(Object.values(response.data)))
-//     .catch((error) => reject(error));
-// });
-
-// const getChosenStaffPicks = () => new Promise((resolve, reject) => {
-//   axios.get(`${dbURL}/products.json?orderBy="staffPick"&equalTo=true`)
-//     .then((response) => resolve(Object.values(response.data)))
-//     .catch((error) => reject(error));
-// });
-
 const addStaffMember = (staff) => new Promise((resolve, reject) => {
   axios
     .post(`${dbURL}/staff.json`, staff)

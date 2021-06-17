@@ -9,9 +9,7 @@ import {
   CardSubtitle
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-// import { deleteProduct } from '../../helpers/data/productsData';
-// import ProductsForm from './ProductForm';
-import { removeStaffMember } from '../../helpers/data/staffData';
+import { addStaffMember, removeStaffMember } from '../../helpers/data/staffData';
 import StaffForm from './StaffForm';
 
 const StaffCard = ({
@@ -28,6 +26,10 @@ const StaffCard = ({
         removeStaffMember(fbKey)
           .then(setStaff);
         break;
+      case 'add':
+        addStaffMember(fbKey)
+          .then(setStaff);
+        break;
       case 'edit':
         setEditing((prevState) => !prevState);
         break;
@@ -37,6 +39,7 @@ const StaffCard = ({
   };
   const editView = (fbKey) => (
     <div>
+      <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'add')}>Add Staff Member</Button>
       <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Remove Staff Member</Button>
       <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : 'Edit Product'}

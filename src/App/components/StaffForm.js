@@ -22,7 +22,7 @@ const StaffForm = ({
 }) => {
   const [staffMember, setStaffMember] = useState({
     // eslint-disable-next-line camelcase
-    first_Name: first_name || '',
+    first_name: first_name || '',
     image: image || '',
     title: title || '',
     email: email || '',
@@ -51,10 +51,10 @@ const StaffForm = ({
     <Form id='addStaffMemberForm' autoComplete='off' onSubmit={handleSubmit}>
         <h2>Staff Form: </h2>
         <FormGroup>
-          <Label for="first_Name">First Name:</Label>
+          <Label for="first_name">First Name:</Label>
           <Input
-            name='first_Name'
-            id='first_Name'
+            name='first_name'
+            id='first_name'
             value={staffMember.first_name}
             type='text'
             placeholder='Enter the First Name of the Employee'
@@ -130,7 +130,7 @@ StaffForm.propTypes = {
   adminAccess: PropTypes.string,
   email: PropTypes.string,
   firebaseKey: PropTypes.string,
-  setStaff: PropTypes.string,
+  setStaff: PropTypes.func,
 };
 
 export default StaffForm;
