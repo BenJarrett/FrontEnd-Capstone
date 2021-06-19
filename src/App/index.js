@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import firebase from 'firebase';
 import './App.scss';
-// import ProductsForm from './components/ProductForm';
 import NavBar from './components/NavBar';
 import Routes from '../helpers/Routes';
 
 function App() {
   const [user, setUser] = useState({});
-
+  const [admin, setAdmin] = useState(null);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
@@ -24,11 +23,24 @@ function App() {
       }
     });
   }, []);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
+        setAdmin(true);
+      } else if (admin || admin === null) {
+        setAdmin(false);
+      }
+    });
+  }, []);
   return (
     <>
       <Router>
-      <NavBar user={user} />
-      <Routes user={user} />
+      <NavBar
+      user={user}
+      admin={admin} />
+      <Routes
+      user={user}
+      admin={admin} />
       </Router>
     </>
   );

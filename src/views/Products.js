@@ -4,7 +4,8 @@ import ProudctsCard from '../App/components/ProductCard';
 import { getProducts } from '../helpers/data/productsData';
 
 function Products({
-  user
+  user,
+  admin
 }) {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -26,6 +27,7 @@ function Products({
        price={productInfo.price}
        name={productInfo.name}
        user={user}
+       admin={admin}
        setProducts={setProducts}
        products={products}
        />
@@ -37,6 +39,7 @@ function Products({
 
 Products.propTypes = {
   user: PropTypes.any,
+  admin: PropTypes.any,
 
 };
 

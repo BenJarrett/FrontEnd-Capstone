@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+
 import {
   Card,
   Button,
   CardTitle,
-  // CardLink,
   CardBody,
   CardSubtitle
 } from 'reactstrap';
@@ -19,12 +18,13 @@ const ProudctsCard = ({
   name,
   image,
   price,
+  admin,
   productId,
   setProducts,
 }) => {
   const [editing, setEditing] = useState(false);
   const [adding, setAdding] = useState(false);
-  // const history = useHistory();
+
   const handleClick = (fbKey, type) => {
     switch (type) {
       case 'delete':
@@ -63,9 +63,8 @@ const ProudctsCard = ({
          <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
-                    <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} >Add to Favorites</Button>
          <CardBody>
-         { editView(firebaseKey) }
+         { admin && editView(firebaseKey) }
          { user && userView(firebaseKey) }
 
          {
@@ -98,6 +97,7 @@ const ProudctsCard = ({
 ProudctsCard.propTypes = {
   firebaseKey: PropTypes.string,
   user: PropTypes.any,
+  admin: PropTypes.any,
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,

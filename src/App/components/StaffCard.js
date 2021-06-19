@@ -4,7 +4,6 @@ import {
   Card,
   Button,
   CardTitle,
-  // CardLink,
   CardBody,
   CardSubtitle
 } from 'reactstrap';
@@ -15,10 +14,10 @@ import StaffForm from './StaffForm';
 const StaffCard = ({
   firebaseKey,
   staff,
-  setStaff
+  setStaff,
+  admin
 }) => {
   const [editing, setEditing] = useState(false);
-  // const history = useHistory();
   console.warn(firebaseKey);
   const handleClick = (fbKey, type) => {
     switch (type) {
@@ -37,7 +36,7 @@ const StaffCard = ({
     <div>
       <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Remove Staff Member</Button>
       <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
-        {editing ? 'Close Form' : 'Edit Product'}
+        {editing ? 'Close Form' : 'Edit Employee Information'}
       </Button>
     </div>
   );
@@ -55,7 +54,7 @@ const StaffCard = ({
          </CardBody>
          <img width="100%" src={staffInfo.image} className="photo" alt="Card image cap" />
          <CardBody>
-         { editView(staffInfo.firebaseKey) }
+         { admin && editView(staffInfo.firebaseKey) }
          {
          editing && <StaffForm
          formTitle='Edit Staff Member'
@@ -81,6 +80,7 @@ StaffCard.propTypes = {
   lastName: PropTypes.string,
   title: PropTypes.string,
   email: PropTypes.string,
+  admin: PropTypes.any,
   setStaff: PropTypes.func,
 
 };

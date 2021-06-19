@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Form,
-  // FormGroup,
-  // Label,
-  // Input,
   Button
 } from 'reactstrap';
 import { addProductToWishList } from '../../helpers/data/UserWishListData';
@@ -33,13 +30,6 @@ const WishlistForm = ({
     firebaseKey: firebaseKey || null
 
   });
-
-  // const handleInputChange = (e) => {
-  //   setProduct((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value
-  //   }));
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();

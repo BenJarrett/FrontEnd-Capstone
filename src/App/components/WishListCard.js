@@ -44,7 +44,6 @@ const WishlistCard = ({
          <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
-                    <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} >Add to Favorites</Button>
          <CardBody>
          { deleteCardView(firebaseKey) }
          </CardBody>

@@ -12,7 +12,8 @@ import ChosenStaffPicks from '../views/StaffPicks';
 import CurrentList from '../views/UserList';
 
 export default function Routes({
-  user
+  user,
+  admin
 }) {
   return (
     <div>
@@ -22,6 +23,7 @@ export default function Routes({
         <Route path='/add-products' component={AddProduct} />
         <Route exact path='/all-products' component={() => <Products
         user={user}
+        admin={admin}
       /> } />
         <Route path='/favorites' component={GetFavoriteProducts} />
         <Route path='/on-sale' component={OnSaleProducts} />
@@ -36,5 +38,6 @@ export default function Routes({
 }
 
 Routes.propTypes = {
-  user: PropTypes.any
+  user: PropTypes.any,
+  admin: PropTypes.any
 };
