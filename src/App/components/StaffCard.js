@@ -32,6 +32,7 @@ const StaffCard = ({
       case 'edit':
         setEditing((prevState) => !prevState);
         break;
+      case 'add-remove-admin-access':
       default:
         console.warn('No Staff Members');
     }
@@ -42,6 +43,7 @@ const StaffCard = ({
       <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : 'Edit Employee Information'}
       </Button>
+      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }}>Give Admin Access</Button>
     </div>
   );
   return (
