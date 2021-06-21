@@ -17,6 +17,7 @@ const ProductsForm = ({
   sFBay,
   sFLevel,
   firebaseKey,
+  sFStock,
   setProducts
 
 }) => {
@@ -27,6 +28,7 @@ const ProductsForm = ({
     sFAisle: sFAisle || '',
     sFBay: sFBay || '',
     sFLevel: sFLevel || '',
+    sFStock: sFStock || '',
     firebaseKey: firebaseKey || null
   });
 
@@ -88,7 +90,7 @@ const ProductsForm = ({
           <Input
             name='sFAisle'
             id='sFAisle'
-            value={product.sFBay}
+            value={product.sFAisle}
             type='text'
             placeholder='Add Store Front Aisle'
             onChange={handleInputChange}
@@ -237,6 +239,7 @@ ProductsForm.propTypes = {
   sFAisle: PropTypes.string,
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
+  sFStock: PropTypes.string,
   firebaseKey: PropTypes.string,
   setProducts: PropTypes.func
 };
