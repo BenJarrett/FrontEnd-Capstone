@@ -6,7 +6,8 @@ import OnSaleProudctsCard from '../App/components/OnSaleProductCard';
 // import { useState } from 'react';
 
 function OnSaleProducts({
-  admin
+  admin,
+  user
 }) {
   const [onSale, setOnSale] = useState([]);
   useEffect(() => {
@@ -26,6 +27,7 @@ function OnSaleProducts({
        setOnSale={setOnSale}
        onSale={onSale}
        admin={admin}
+       user={user}
        />
         ))}
        </div>
@@ -34,7 +36,8 @@ function OnSaleProducts({
 }
 
 OnSaleProducts.propTypes = {
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  user: PropTypes.any
 };
 
 export default OnSaleProducts;

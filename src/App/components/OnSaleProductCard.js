@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import {
   Card,
   Button,
   CardTitle,
-  // CardLink,
   CardBody,
   CardSubtitle
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { deleteProduct } from '../../helpers/data/productsData';
 import ProductsForm from './ProductForm';
+import WishlistForm from './WishListPopUp';
 
 const OnSaleProudctsCard = ({
   firebaseKey,
+  user,
   admin,
   name,
   price,
   image,
+  productId,
   setOnSale,
 }) => {
   const [editing, setEditing] = useState(false);
-  // const history = useHistory();
+  const [adding, setAdding] = useState(false);
   console.warn(firebaseKey);
   const handleClick = (fbKey, type) => {
     switch (type) {
@@ -31,6 +32,9 @@ const OnSaleProudctsCard = ({
         break;
       case 'edit':
         setEditing((prevState) => !prevState);
+        break;
+      case 'add-to-wishlist':
+        setAdding((prevState) => !prevState);
         break;
       default:
         console.warn('No Projects');
@@ -44,6 +48,12 @@ const OnSaleProudctsCard = ({
       </Button>
     </div>
   );
+  const userView = (fbKey) => (
+    <div className='add-wishlist'>
+      <Button
+       onClick={() => handleClick(fbKey, 'add-to-wishlist')}> Add To Wishlist</Button>
+    </div>
+  );
   return (
         <Card>
           <CardBody>
@@ -54,6 +64,8 @@ const OnSaleProudctsCard = ({
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
          { admin && editView(firebaseKey) }
+         { user && userView(firebaseKey) }
+
          {
          editing && <ProductsForm
          formTitle='Edit Product'
@@ -65,6 +77,18 @@ const OnSaleProudctsCard = ({
          admin={admin}
          />
          }
+         {
+         adding && <WishlistForm
+         formTitle='Add To Wishlist'
+         setOnSale={setOnSale}
+         firebaseKey={firebaseKey}
+         productId={productId}
+         price={price}
+         image={image}
+         name={name}
+         user={user}
+         />
+         }
          </CardBody>
          </Card>
   );
@@ -72,11 +96,12 @@ const OnSaleProudctsCard = ({
 
 OnSaleProudctsCard.propTypes = {
   firebaseKey: PropTypes.string,
-  onSale: PropTypes.array,
-  setOnSale: PropTypes.func,
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  user: PropTypes.any,
+  productId: PropTypes.string,
+  setOnSale: PropTypes.func,
 };
 export default OnSaleProudctsCard;

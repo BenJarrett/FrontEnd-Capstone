@@ -29,6 +29,7 @@ export default function Routes({
         <Route path='/favorites' component={GetFavoriteProducts} />
         <Route path='/on-sale' component={() => <OnSale
         admin={admin}
+        user={user}
       /> } />
         <Route path='/staff' component={() => <Staff
         admin={admin}
