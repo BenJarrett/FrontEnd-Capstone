@@ -4,50 +4,39 @@ import { getStaffList } from '../helpers/data/staffData';
 import StaffCard from '../App/components/StaffCard';
 
 function staffMembers({
-  firebaseKey,
-  image,
-  email,
-  admin,
-  // eslint-disable-next-line camelcase
-  first_name,
-  lastName,
-  title
+  admin
 }) {
   const [staff, setStaff] = useState([]);
   useEffect(() => {
     getStaffList().then((response) => setStaff(response));
   }, []);
+
   return (
     <div className="this">
     <h1>Staff Members</h1>
       <div className="card-container">
+        {staff.map((productInfo) => (
        <StaffCard
-       firebaseKey={firebaseKey}
-       image={image}
-       email={email}
+       key={productInfo.firebaseKey}
+       firebaseKey={productInfo.firebaseKey}
+       image={productInfo.image}
+       email={productInfo.email}
        // eslint-disable-next-line camelcase
-       first_name={first_name}
-       lastName={lastName}
-       title={title}
+       firstName={productInfo.firstName}
+       lastName={productInfo.lastName}
+       title={productInfo.title}
        admin={admin}
        staff={staff}
        setStaff={setStaff}
        />
+        ))}
        </div>
      </div>
   );
 }
 
 staffMembers.propTypes = {
-  firebaseKey: PropTypes.string,
-  image: PropTypes.string,
-  email: PropTypes.string,
-  first_Name: PropTypes.string,
-  lastName: PropTypes.string,
-  title: PropTypes.string,
-  admin: PropTypes.any,
-  staff: PropTypes.array,
-  setStaff: PropTypes.func
+  admin: PropTypes.any
 };
 
 export default staffMembers;

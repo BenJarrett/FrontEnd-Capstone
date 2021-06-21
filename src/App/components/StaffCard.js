@@ -13,9 +13,13 @@ import StaffForm from './StaffForm';
 
 const StaffCard = ({
   firebaseKey,
-  staff,
   setStaff,
-  admin
+  admin,
+  firstName,
+  lastName,
+  title,
+  image,
+  email
 }) => {
   const [editing, setEditing] = useState(false);
   console.warn(firebaseKey);
@@ -41,35 +45,33 @@ const StaffCard = ({
     </div>
   );
   return (
-    staff.map((staffInfo) => (
-        <Card
-        key={staffInfo.firebaseKey}>
+        <Card>
           <CardBody>
-         <CardTitle tag="h5">First Name: {staffInfo.first_name}</CardTitle>
-         <CardTitle tag="h5"> Last Name: {staffInfo.lastName}</CardTitle>
+         <CardTitle tag="h5">First Name: {firstName}</CardTitle>
+         <CardTitle tag="h5"> Last Name: {lastName}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">Email: {staffInfo.email}</CardSubtitle>
-         <CardTitle tag="h5">Title: {staffInfo.title}</CardTitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Email: {email}</CardSubtitle>
+         <CardTitle tag="h5">Title: {title}</CardTitle>
          <hr></hr>
          </CardBody>
-         <img width="100%" src={staffInfo.image} className="photo" alt="Card image cap" />
+         <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
-         { admin && editView(staffInfo.firebaseKey) }
+         { admin && editView(firebaseKey) }
          {
          editing && <StaffForm
          formTitle='Edit Staff Member'
-         firebaseKey={staffInfo.firebaseKey}
-         first_name={staffInfo.first_name}
-         lastName={staffInfo.lastName}
-         title={staffInfo.title}
-         email={staffInfo.email}
+         firebaseKey={firebaseKey}
+         firstName={firstName}
+         lastName={lastName}
+         title={title}
+         email={email}
          admin={admin}
+         image={image}
          setStaff={setStaff}
          />
          }
          </CardBody>
          </Card>
-    ))
   );
 };
 
@@ -77,7 +79,7 @@ StaffCard.propTypes = {
   firebaseKey: PropTypes.string,
   staff: PropTypes.array,
   image: PropTypes.string,
-  first_name: PropTypes.string,
+  firstName: PropTypes.string,
   lastName: PropTypes.string,
   title: PropTypes.string,
   email: PropTypes.string,

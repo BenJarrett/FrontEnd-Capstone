@@ -10,8 +10,7 @@ import {
 import { addStaffMember, updateStaffMember } from '../../helpers/data/staffData';
 
 const StaffForm = ({
-  // eslint-disable-next-line camelcase
-  first_name,
+  firstName,
   image,
   title,
   email,
@@ -22,7 +21,7 @@ const StaffForm = ({
 }) => {
   const [staffMember, setStaffMember] = useState({
     // eslint-disable-next-line camelcase
-    first_name: first_name || '',
+    firstName: firstName || '',
     image: image || '',
     title: title || '',
     email: email || '',
@@ -51,11 +50,11 @@ const StaffForm = ({
     <Form id='addStaffMemberForm' autoComplete='off' onSubmit={handleSubmit}>
         <h2>Staff Form: </h2>
         <FormGroup>
-          <Label for="first_name">First Name:</Label>
+          <Label for="firstName">First Name:</Label>
           <Input
-            name='first_name'
-            id='first_name'
-            value={staffMember.first_name}
+            name='firstName'
+            id='firstName'
+            value={staffMember.firstName}
             type='text'
             placeholder='Enter the First Name of the Employee'
             onChange={handleInputChange}
@@ -123,7 +122,7 @@ const StaffForm = ({
 };
 
 StaffForm.propTypes = {
-  first_name: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
   image: PropTypes.string,
   lastName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

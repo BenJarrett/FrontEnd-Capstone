@@ -36,6 +36,7 @@ export default function Routes({
         /> }/>
         <Route path='/staff-picks' component={() => <StaffPicks
         admin={admin}
+        user={user}
       /> } />
         <Route exact path='/user-list' component={() => <CurrentList
         user={user}
