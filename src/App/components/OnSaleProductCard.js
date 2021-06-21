@@ -15,7 +15,8 @@ import ProductsForm from './ProductForm';
 const OnSaleProudctsCard = ({
   firebaseKey,
   onSale,
-  setOnSale
+  setOnSale,
+  admin
 }) => {
   const [editing, setEditing] = useState(false);
   // const history = useHistory();
@@ -52,7 +53,7 @@ const OnSaleProudctsCard = ({
          </CardBody>
          <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
          <CardBody>
-         { editView(productInfo.firebaseKey) }
+         { admin && editView(productInfo.firebaseKey) }
          {
          editing && <ProductsForm
          formTitle='Edit Product'
@@ -61,6 +62,7 @@ const OnSaleProudctsCard = ({
          price={productInfo.price}
          image={productInfo.image}
          name={productInfo.name}
+         admin={admin}
          />
          }
          </CardBody>
@@ -73,8 +75,9 @@ OnSaleProudctsCard.propTypes = {
   firebaseKey: PropTypes.string,
   onSale: PropTypes.array,
   setOnSale: PropTypes.func,
-  // price: PropTypes.string,
-  // name: PropTypes.string,
-  // image: PropTypes.string,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  admin: PropTypes.any
 };
 export default OnSaleProudctsCard;

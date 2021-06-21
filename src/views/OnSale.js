@@ -10,6 +10,7 @@ function OnSaleProducts({
   image,
   price,
   name,
+  admin
 }) {
   const [onSale, setOnSale] = useState([]);
   useEffect(() => {
@@ -26,6 +27,7 @@ function OnSaleProducts({
        name={name}
        setOnSale={setOnSale}
        onSale={onSale}
+       admin={admin}
        />
        </div>
      </div>
@@ -38,7 +40,8 @@ OnSaleProducts.propTypes = {
   price: PropTypes.string,
   name: PropTypes.string,
   products: PropTypes.array,
-  setProducts: PropTypes.func
+  setProducts: PropTypes.func,
+  admin: PropTypes.any
 };
 
 export default OnSaleProducts;

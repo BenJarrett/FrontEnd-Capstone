@@ -7,10 +7,10 @@ import GetFavoriteProducts from '../views/UserFavotires';
 // import GetStaff from '../views/Staff';
 // import GetStaffPicks from '../views/StaffPicks';
 import Products from '../views/Products';
-import OnSaleProducts from '../views/OnSale';
 import CurrentList from '../views/UserList';
 import Staff from '../views/Staff';
 import StaffPicks from '../views/StaffPicks';
+import OnSale from '../views/OnSale';
 
 export default function Routes({
   user,
@@ -27,7 +27,9 @@ export default function Routes({
         admin={admin}
       /> } />
         <Route path='/favorites' component={GetFavoriteProducts} />
-        <Route path='/on-sale' component={OnSaleProducts} />
+        <Route path='/on-sale' component={() => <OnSale
+        admin={admin}
+      /> } />
         <Route path='/staff' component={() => <Staff
         admin={admin}
         /> }/>
