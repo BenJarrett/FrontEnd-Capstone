@@ -6,10 +6,6 @@ import OnSaleProudctsCard from '../App/components/OnSaleProductCard';
 // import { useState } from 'react';
 
 function OnSaleProducts({
-  firebaseKey,
-  image,
-  price,
-  name,
   admin
 }) {
   const [onSale, setOnSale] = useState([]);
@@ -18,29 +14,26 @@ function OnSaleProducts({
   }, []);
   return (
     <div className="this">
-    <h1>Products</h1>
+    <h1>On Sale!</h1>
       <div className="card-container">
+        {onSale.map((productInfo) => (
        <OnSaleProudctsCard
-       firebaseKey={firebaseKey}
-       image={image}
-       price={price}
-       name={name}
+       key={productInfo.firebaseKey}
+       firebaseKey={productInfo.firebaseKey}
+       image={productInfo.image}
+       price={productInfo.price}
+       name={productInfo.name}
        setOnSale={setOnSale}
        onSale={onSale}
        admin={admin}
        />
+        ))}
        </div>
      </div>
   );
 }
 
 OnSaleProducts.propTypes = {
-  firebaseKey: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.string,
-  name: PropTypes.string,
-  products: PropTypes.array,
-  setProducts: PropTypes.func,
   admin: PropTypes.any
 };
 
