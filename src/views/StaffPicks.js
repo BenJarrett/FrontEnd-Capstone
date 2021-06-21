@@ -6,11 +6,7 @@ import StaffPickCard from '../App/components/StaffPickCard';
 // import { useState } from 'react';
 
 function ChosenStaffPicks({
-  firebaseKey,
-  image,
-  price,
-  name,
-  admin
+  admin,
 }) {
   const [staffPicks, setStaffPicks] = useState([]);
   useEffect(() => {
@@ -18,30 +14,27 @@ function ChosenStaffPicks({
   }, []);
   return (
     <div className="this">
-    <h1>Products</h1>
+    <h1>Favorites from our Staff!</h1>
       <div className="card-container">
+        {staffPicks.map((productInfo) => (
        <StaffPickCard
-       firebaseKey={firebaseKey}
-       image={image}
-       price={price}
-       name={name}
+       key={productInfo.firebaseKey}
+       firebaseKey={productInfo.firebaseKey}
+       image={productInfo.image}
+       price={productInfo.price}
+       name={productInfo.name}
        admin={admin}
        setStaffPicks={setStaffPicks}
        staffPicks={staffPicks}
        />
+        ))}
        </div>
      </div>
   );
 }
 
 ChosenStaffPicks.propTypes = {
-  firebaseKey: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.string,
-  name: PropTypes.string,
   admin: PropTypes.any,
-  staffPicks: PropTypes.array,
-  setStaffPicks: PropTypes.func
 };
 
 export default ChosenStaffPicks;

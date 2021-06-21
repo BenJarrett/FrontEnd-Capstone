@@ -14,9 +14,11 @@ import ProductsForm from './ProductForm';
 
 const StaffPickCard = ({
   firebaseKey,
-  staffPicks,
   setStaffPicks,
-  admin
+  admin,
+  name,
+  price,
+  image
 
 }) => {
   const [editing, setEditing] = useState(false);
@@ -43,41 +45,38 @@ const StaffPickCard = ({
     </div>
   );
   return (
-    staffPicks.map((productInfo) => (
-        <Card
-        key={productInfo.firebaseKey}>
+        <Card>
           <CardBody>
-         <CardTitle tag="h5">Product Name: {productInfo.name}</CardTitle>
+         <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {productInfo.price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
          </CardBody>
-         <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
+         <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
-         { admin && editView(productInfo.firebaseKey) }
+         { admin && editView(firebaseKey) }
          {
          editing && <ProductsForm
          formTitle='Edit Staff Picks Form'
          setStaffPicks={setStaffPicks}
-         firebaseKey={productInfo.firebaseKey}
-         price={productInfo.price}
-         image={productInfo.image}
-         name={productInfo.name}
+         firebaseKey={firebaseKey}
+         price={price}
+         image={image}
+         name={name}
          admin={admin}
          />
          }
          </CardBody>
          </Card>
-    ))
   );
 };
 
 StaffPickCard.propTypes = {
   firebaseKey: PropTypes.string,
   staffPicks: PropTypes.array,
-  setStaffPicks: PropTypes.func,
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  setStaffPicks: PropTypes.func
 };
 export default StaffPickCard;
