@@ -10,7 +10,7 @@ function App() {
   const [admin, setAdmin] = useState(null);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
-      if (authed) {
+      if (authed && (authed.uid !== process.env.REACT_APP_ADMIN_UID)) {
         const userInfoObj = {
           fullName: authed.displayName,
           profileImage: authed.photoURL,

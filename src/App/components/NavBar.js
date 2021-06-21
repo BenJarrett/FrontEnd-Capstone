@@ -11,7 +11,6 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { signInUser, signOutUser } from '../../helpers/auth';
-// import { signInUser, signOutUser } from '../../helpers/auth';
 
 const NavBar = ({ admin, user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,12 +68,17 @@ const NavBar = ({ admin, user }) => {
                   {
                   admin
                     ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                    : <Button color="link" onClick={signInUser}>Sign In</Button>
+                    : ''
                   }
                   {
                     user
                       ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
                       : ''
+                  }
+                  {
+                    user !== admin
+                      ? ''
+                      : <Button color="link" onClick={signInUser}>Sign In</Button>
                   }
                 </NavItem>
               }

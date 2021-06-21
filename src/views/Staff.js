@@ -21,7 +21,6 @@ function staffMembers({
        firebaseKey={productInfo.firebaseKey}
        image={productInfo.image}
        email={productInfo.email}
-       // eslint-disable-next-line camelcase
        firstName={productInfo.firstName}
        lastName={productInfo.lastName}
        title={productInfo.title}

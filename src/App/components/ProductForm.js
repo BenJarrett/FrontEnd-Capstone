@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Form,
@@ -31,6 +32,7 @@ const ProductsForm = ({
     sFStock: sFStock || '',
     firebaseKey: firebaseKey || null
   });
+  const history = useHistory();
 
   const handleInputChange = (e) => {
     setProduct((prevState) => ({
@@ -42,9 +44,11 @@ const ProductsForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (product.firebaseKey) {
-      updateProduct(product).then((productArray) => setProducts(productArray));
+      updateProduct(product).then(setProducts);
     } else {
-      addProduct(product).then((productArray) => setProducts(productArray));
+      addProduct(product).then(() => {
+        history.push('/all-products');
+      });
     }
   };
 
