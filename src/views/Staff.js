@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import ProudctsCard from '../App/components/ProductCard';
 import { getStaffList } from '../helpers/data/staffData';
 import StaffCard from '../App/components/StaffCard';
-// import StaffPickCard from '../App/components/StaffPickCard';
-// import { useState } from 'react';
 
 function staffMembers({
   firebaseKey,
   image,
   email,
+  admin,
   // eslint-disable-next-line camelcase
-  first_Name,
+  first_name,
   lastName,
   title
 }) {
@@ -28,9 +26,10 @@ function staffMembers({
        image={image}
        email={email}
        // eslint-disable-next-line camelcase
-       first_Name={first_Name}
+       first_name={first_name}
        lastName={lastName}
        title={title}
+       admin={admin}
        staff={staff}
        setStaff={setStaff}
        />
@@ -46,6 +45,7 @@ staffMembers.propTypes = {
   first_Name: PropTypes.string,
   lastName: PropTypes.string,
   title: PropTypes.string,
+  admin: PropTypes.any,
   staff: PropTypes.array,
   setStaff: PropTypes.func
 };

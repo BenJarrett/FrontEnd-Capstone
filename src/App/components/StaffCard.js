@@ -63,6 +63,7 @@ const StaffCard = ({
          lastName={staffInfo.lastName}
          title={staffInfo.title}
          email={staffInfo.email}
+         admin={admin}
          setStaff={setStaff}
          />
          }

@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import HomePage from '../views/Home';
 import AddProduct from '../views/AdminAddProducts';
 import GetFavoriteProducts from '../views/UserFavotires';
-import GetStaff from '../views/Staff';
+// import GetStaff from '../views/Staff';
 // import GetStaffPicks from '../views/StaffPicks';
 import Products from '../views/Products';
 import OnSaleProducts from '../views/OnSale';
 import ChosenStaffPicks from '../views/StaffPicks';
 import CurrentList from '../views/UserList';
+import Staff from '../views/Staff';
 
 export default function Routes({
   user,
@@ -27,7 +28,9 @@ export default function Routes({
       /> } />
         <Route path='/favorites' component={GetFavoriteProducts} />
         <Route path='/on-sale' component={OnSaleProducts} />
-        <Route path='/staff' component={GetStaff} />
+        <Route path='/staff' component={() => <Staff
+        admin={admin}
+        /> }/>
         <Route path='/staff-picks' component={ChosenStaffPicks} />
         <Route exact path='/user-list' component={() => <CurrentList
         user={user}
