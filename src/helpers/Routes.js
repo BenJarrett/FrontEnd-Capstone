@@ -8,9 +8,9 @@ import GetFavoriteProducts from '../views/UserFavotires';
 // import GetStaffPicks from '../views/StaffPicks';
 import Products from '../views/Products';
 import OnSaleProducts from '../views/OnSale';
-import ChosenStaffPicks from '../views/StaffPicks';
 import CurrentList from '../views/UserList';
 import Staff from '../views/Staff';
+import StaffPicks from '../views/StaffPicks';
 
 export default function Routes({
   user,
@@ -31,7 +31,9 @@ export default function Routes({
         <Route path='/staff' component={() => <Staff
         admin={admin}
         /> }/>
-        <Route path='/staff-picks' component={ChosenStaffPicks} />
+        <Route path='/staff-picks' component={() => <StaffPicks
+        admin={admin}
+      /> } />
         <Route exact path='/user-list' component={() => <CurrentList
         user={user}
       /> } />

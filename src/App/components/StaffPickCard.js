@@ -15,10 +15,11 @@ import ProductsForm from './ProductForm';
 const StaffPickCard = ({
   firebaseKey,
   staffPicks,
-  setStaffPicks
+  setStaffPicks,
+  admin
+
 }) => {
   const [editing, setEditing] = useState(false);
-  // const history = useHistory();
   console.warn(firebaseKey);
   const handleClick = (fbKey, type) => {
     switch (type) {
@@ -30,7 +31,7 @@ const StaffPickCard = ({
         setEditing((prevState) => !prevState);
         break;
       default:
-        console.warn('No Projects');
+        console.warn('No Staff Picks Set Up!');
     }
   };
   const editView = (fbKey) => (
@@ -46,21 +47,22 @@ const StaffPickCard = ({
         <Card
         key={productInfo.firebaseKey}>
           <CardBody>
-         <CardTitle tag="h5">Prduct Name: {productInfo.name}</CardTitle>
+         <CardTitle tag="h5">Product Name: {productInfo.name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {productInfo.price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {productInfo.price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={productInfo.image} className="photo" alt="Card image cap" />
          <CardBody>
-         { editView(productInfo.firebaseKey) }
+         { admin && editView(productInfo.firebaseKey) }
          {
          editing && <ProductsForm
-         formTitle='Edit Product'
+         formTitle='Edit Staff Picks Form'
          setStaffPicks={setStaffPicks}
          firebaseKey={productInfo.firebaseKey}
          price={productInfo.price}
          image={productInfo.image}
          name={productInfo.name}
+         admin={admin}
          />
          }
          </CardBody>
@@ -73,8 +75,9 @@ StaffPickCard.propTypes = {
   firebaseKey: PropTypes.string,
   staffPicks: PropTypes.array,
   setStaffPicks: PropTypes.func,
-  // price: PropTypes.string,
-  // name: PropTypes.string,
-  // image: PropTypes.string,
+  price: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  admin: PropTypes.any
 };
 export default StaffPickCard;

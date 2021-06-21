@@ -10,6 +10,7 @@ function ChosenStaffPicks({
   image,
   price,
   name,
+  admin
 }) {
   const [staffPicks, setStaffPicks] = useState([]);
   useEffect(() => {
@@ -24,6 +25,7 @@ function ChosenStaffPicks({
        image={image}
        price={price}
        name={name}
+       admin={admin}
        setStaffPicks={setStaffPicks}
        staffPicks={staffPicks}
        />
@@ -37,6 +39,7 @@ ChosenStaffPicks.propTypes = {
   image: PropTypes.string,
   price: PropTypes.string,
   name: PropTypes.string,
+  admin: PropTypes.any,
   staffPicks: PropTypes.array,
   setStaffPicks: PropTypes.func
 };
