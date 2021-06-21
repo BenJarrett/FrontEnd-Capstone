@@ -22,7 +22,7 @@ const StaffCard = ({
   email
 }) => {
   const [editing, setEditing] = useState(false);
-  console.warn(firebaseKey);
+
   const handleClick = (fbKey, type) => {
     switch (type) {
       case 'delete':
