@@ -7,13 +7,13 @@ import Routes from '../helpers/Routes';
 import { createUser, getUserbyUid } from '../helpers/data/userData';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [admin, setAdmin] = useState(null);
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
-      if (authed && (authed.uid !== process.env.REACT_APP_ADMIN_UID)) {
+      if (authed) {
         const userInfoObj = {
-          admin: false,
+          adminAccess: false,
           fullName: authed.displayName,
           profileImage: authed.photoURL,
           uid: authed.uid,
@@ -26,20 +26,26 @@ function App() {
             setUser(userInfoObj);
           }
         });
-      } else if (user || user === null) {
-        setUser(false);
-      }
-    });
-  }, []);
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((authed) => {
-      if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
+        setUser(userInfoObj);
+      } else if (authed && (user.adminAccess === true)) {
         setAdmin(true);
-      } else if (admin || admin === null) {
+        console.warn('I am ass fuck');
+      } else if ((user || user === null) || (admin || admin === null)) {
+        setUser(false);
         setAdmin(false);
       }
     });
   }, []);
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged((authed) => {
+  //     if (authed && (user.adminAccess === true)) {
+  //       setAdmin(true);
+  //       console.warn('I am working');
+  //     } else if (admin || admin === null) {
+  //       setAdmin(false);
+  //     }
+  //   });
+  // }, []);
   return (
     <>
       <Router>
