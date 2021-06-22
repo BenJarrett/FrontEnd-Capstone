@@ -40,7 +40,6 @@ function Products({
 Products.propTypes = {
   user: PropTypes.any,
   admin: PropTypes.any,
-
 };
 
 export default Products;
