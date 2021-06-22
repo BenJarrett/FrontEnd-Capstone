@@ -68,12 +68,12 @@ const NavBar = ({ admin, user }) => {
                   {
                   admin
                     ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                    : ''
+                    : <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
                   }
                   {
                     user
                       ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                      : ''
+                      : <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
                   }
                   {
                     user !== admin

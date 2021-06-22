@@ -36,6 +36,7 @@ function App() {
     });
   }, []);
   console.warn(admin);
+  console.warn(user);
 
   // useEffect(() => {
   //   firebase.auth().onAuthStateChanged((authed) => {
