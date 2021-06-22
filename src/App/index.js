@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import './App.scss';
 import NavBar from './components/NavBar';
 import Routes from '../helpers/Routes';
+import { createUser, getUserbyUid } from '../helpers/data/userData';
 
 function App() {
   const [user, setUser] = useState({});
@@ -12,12 +13,19 @@ function App() {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed && (authed.uid !== process.env.REACT_APP_ADMIN_UID)) {
         const userInfoObj = {
+          admin: false,
           fullName: authed.displayName,
           profileImage: authed.photoURL,
           uid: authed.uid,
           user: authed.email.split('@gmail.com')[0]
         };
-        setUser(userInfoObj);
+        getUserbyUid(authed.uid).then((response) => {
+          if (Object.values(response.data).length === 0) {
+            createUser(userInfoObj).then((resp) => setUser(resp));
+          } else {
+            setUser(userInfoObj);
+          }
+        });
       } else if (user || user === null) {
         setUser(false);
       }
