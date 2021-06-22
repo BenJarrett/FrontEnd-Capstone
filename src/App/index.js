@@ -29,13 +29,14 @@ function App() {
         setUser(userInfoObj);
       } else if (authed && (user.adminAccess === true)) {
         setAdmin(true);
-        console.warn('I am ass fuck');
       } else if ((user || user === null) || (admin || admin === null)) {
         setUser(false);
         setAdmin(false);
       }
     });
   }, []);
+  console.warn(admin);
+
   // useEffect(() => {
   //   firebase.auth().onAuthStateChanged((authed) => {
   //     if (authed && (user.adminAccess === true)) {
