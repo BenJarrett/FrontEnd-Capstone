@@ -10,22 +10,15 @@ import {
 import { addStaffMember, updateStaffMember } from '../../helpers/data/staffData';
 
 const StaffForm = ({
-  firstName,
-  image,
-  title,
-  email,
-  lastName,
+  fullName,
+  profileImage,
   setStaff,
   firebaseKey,
 
 }) => {
   const [staffMember, setStaffMember] = useState({
-    // eslint-disable-next-line camelcase
-    firstName: firstName || '',
-    image: image || '',
-    title: title || '',
-    email: email || '',
-    lastName: lastName || '',
+    fullName: fullName || '',
+    profileImage: profileImage || '',
     firebaseKey: firebaseKey || null
   });
 
@@ -54,53 +47,20 @@ const StaffForm = ({
           <Input
             name='firstName'
             id='firstName'
-            value={staffMember.firstName}
+            value={staffMember.fullName}
             type='text'
             placeholder='Enter the First Name of the Employee'
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-        <Label for="image">Image:</Label>
+        <Label for="profileImage">Image:</Label>
           <Input
-            name='image'
-            id='image'
-            value={staffMember.image}
+            name='profileImage'
+            id='profileImage'
+            value={staffMember.profileImage}
             type='url'
             placeholder='Image of Staff Member'
-            onChange={handleInputChange}
-          />
-        </FormGroup>
-        <FormGroup>
-        <Label for="lastName">Last Name:</Label>
-          <Input
-            name='lastName'
-            id='lastName'
-            value={staffMember.lastName}
-            type='text'
-            placeholder='Enter the Last Name of the Employee'
-            onChange={handleInputChange}
-          />
-        </FormGroup>
-        <FormGroup>
-        <Label for="email">Staff Member Email:</Label>
-          <Input
-            name='email'
-            id='email'
-            value={staffMember.email}
-            type='text'
-            placeholder='Add Employee Email'
-            onChange={handleInputChange}
-          />
-        </FormGroup>
-        <FormGroup>
-        <Label for="title">Staff Member Title:</Label>
-          <Input
-            name='title'
-            id='title'
-            value={staffMember.title}
-            type='text'
-            placeholder='Add Title of Staff Member'
             onChange={handleInputChange}
           />
         </FormGroup>
@@ -122,12 +82,9 @@ const StaffForm = ({
 };
 
 StaffForm.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  lastName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
+  profileImage: PropTypes.string,
   adminAccess: PropTypes.string,
-  email: PropTypes.string,
   firebaseKey: PropTypes.string,
   setStaff: PropTypes.func,
 };

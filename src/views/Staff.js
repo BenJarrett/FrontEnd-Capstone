@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getStaffList } from '../helpers/data/staffData';
+// import { getStaffList } from '../helpers/data/staffData';
 import StaffCard from '../App/components/StaffCard';
+import { getUsers } from '../helpers/data/userData';
 
 function staffMembers({
   admin
 }) {
   const [staff, setStaff] = useState([]);
   useEffect(() => {
-    getStaffList().then((response) => setStaff(response));
+    getUsers().then((response) => setStaff(response));
   }, []);
 
   return (
@@ -19,11 +20,8 @@ function staffMembers({
        <StaffCard
        key={productInfo.firebaseKey}
        firebaseKey={productInfo.firebaseKey}
-       image={productInfo.image}
-       email={productInfo.email}
-       firstName={productInfo.firstName}
-       lastName={productInfo.lastName}
-       title={productInfo.title}
+       profileImage={productInfo.profileImage}
+       fullName={productInfo.fullName}
        admin={admin}
        staff={staff}
        setStaff={setStaff}
