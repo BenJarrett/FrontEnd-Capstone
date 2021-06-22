@@ -10,22 +10,15 @@ import {
 import { addStaffMember, updateStaffMember } from '../../helpers/data/staffData';
 
 const StaffForm = ({
-  firstName,
-  image,
-  title,
-  email,
-  lastName,
+  fullName,
+  profileImage,
   setStaff,
   firebaseKey,
 
 }) => {
   const [staffMember, setStaffMember] = useState({
-    // eslint-disable-next-line camelcase
-    firstName: firstName || '',
-    image: image || '',
-    title: title || '',
-    email: email || '',
-    lastName: lastName || '',
+    fullName: fullName || '',
+    profileImage: profileImage || '',
     firebaseKey: firebaseKey || null
   });
 
@@ -122,12 +115,9 @@ const StaffForm = ({
 };
 
 StaffForm.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  lastName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
+  profileImage: PropTypes.string,
   adminAccess: PropTypes.string,
-  email: PropTypes.string,
   firebaseKey: PropTypes.string,
   setStaff: PropTypes.func,
 };
