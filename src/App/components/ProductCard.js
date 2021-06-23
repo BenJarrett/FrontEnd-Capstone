@@ -43,9 +43,13 @@ const ProudctsCard = ({
   };
   const editView = (fbKey) => (
     <div>
-      <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Delete Product</Button>
-      <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
-        {editing ? 'Close Form' : 'Edit Product'}
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', margin: '10px', textAlign: 'left', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
+      <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }} onClick={() => handleClick(fbKey, 'edit')}>
+        {editing ? 'Close Form' : <i className="fas fa-user-edit"></i>
+
+}
       </Button>
     </div>
   );
@@ -60,7 +64,7 @@ const ProudctsCard = ({
           <CardBody>
          <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>

@@ -5,7 +5,8 @@ import StaffCard from '../App/components/StaffCard';
 import { getUsers } from '../helpers/data/userData';
 
 function staffMembers({
-  admin
+  admin,
+  user
 }) {
   const [staff, setStaff] = useState([]);
   useEffect(() => {
@@ -22,6 +23,7 @@ function staffMembers({
        firebaseKey={productInfo.firebaseKey}
        profileImage={productInfo.profileImage}
        fullName={productInfo.fullName}
+       user={user}
        admin={admin}
        staff={staff}
        setStaff={setStaff}
@@ -33,7 +35,8 @@ function staffMembers({
 }
 
 staffMembers.propTypes = {
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  user: PropTypes.any
 };
 
 export default staffMembers;

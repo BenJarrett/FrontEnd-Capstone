@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { removeStaffMember } from '../../helpers/data/staffData';
 import StaffForm from './StaffForm';
-import { getSingleUser } from '../../helpers/data/userData';
+import { updateAdmin, updateAdminAccess } from '../../helpers/data/userData';
 
 const StaffCard = ({
   firebaseKey,
@@ -31,9 +31,15 @@ const StaffCard = ({
         setEditing((prevState) => !prevState);
         break;
       case 'admin':
-        getSingleUser(fbKey).then((response) => {
-          // Object.values(response.data)[0].adminAccess = true;
-          console.warn(response);
+        updateAdmin(fbKey).then(() => {
+          const adminObj = { adminAccess: true };
+          updateAdminAccess(fbKey, adminObj);
+        });
+        break;
+      case 'lose-admin':
+        updateAdmin(fbKey).then(() => {
+          const adminObj = { adminAccess: false };
+          updateAdminAccess(fbKey, adminObj);
         });
         break;
       default:
@@ -47,6 +53,7 @@ const StaffCard = ({
         {editing ? 'Close Form' : 'Edit Employee Information'}
       </Button>
       <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'admin')}>Give Admin Access</Button>
+      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'lose-admin')}>Revoke Admin Access</Button>
     </div>
   );
   return (

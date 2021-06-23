@@ -25,7 +25,9 @@ const NavBar = ({ admin, user }) => {
   <NavItem>
               <Link className="nav-link" to="/staff">Staff</Link>
             </NavItem>
+            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
   </>
+
   );
 
   const authenticatedUser = () => (
@@ -33,9 +35,7 @@ const NavBar = ({ admin, user }) => {
   <NavItem>
     <Link className="nav-link" id="user-wishlist-id" to="/user-list">Current List</Link>
   </NavItem>
-  <NavItem>
-              <Link className="nav-link" to="/favorites">Favorites</Link>
-            </NavItem>
+            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
   </>
   );
   return (
@@ -58,31 +58,23 @@ const NavBar = ({ admin, user }) => {
             <NavItem>
               <Link className="nav-link" to="/staff-picks">Staff Picks</Link>
             </NavItem>
-            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-            <Button className='nav-link' color='link' onClick={signInUser}>Sign In</Button>
+            {/* <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button> */}
+            {/* <Button className='nav-link' color='link' onClick={signInUser}>Sign In</Button> */}
             {admin && authenticated()}
-          {user && authenticatedUser()}
+          {user ? authenticatedUser()
+            : <Button color="link" onClick={signInUser}>Sign In</Button>
+          }
           <NavItem>
-              {
-                admin !== null
-                && <NavItem>
-                  {
-                  admin
-                    ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                    : ''
-                  }
-                  {
-                    user
-                      ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+            <NavItem>
+                  {/* {
+                    user === false || admin === false ? <Button color="link" onClick={signInUser}>Sign In</Button>
                       : ''
-                  }
-                  {
-                    user !== admin
-                      ? ''
+                  } */}
+                    {/* {
+                    user === true ? ''
                       : <Button color="link" onClick={signInUser}>Sign In</Button>
-                  }
+                  } */}
                 </NavItem>
-              }
             </NavItem>
           </Nav>
         </Collapse>

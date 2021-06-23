@@ -34,6 +34,7 @@ export default function Routes({
       /> } />
         <Route path='/staff' component={() => <Staff
         admin={admin}
+        user={user}
         /> }/>
         <Route path='/staff-picks' component={() => <StaffPicks
         admin={admin}

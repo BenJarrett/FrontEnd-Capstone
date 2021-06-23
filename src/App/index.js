@@ -24,7 +24,7 @@ function App() {
             createUser(userInfoObj).then((resp) => setUser(resp));
           } if (Object.values(response.data)[0].adminAccess === true) {
             userInfoObj.adminAccess = true;
-            setUser(userInfoObj);
+            // setUser(userInfoObj);
             setAdmin(userInfoObj);
           } if (Object.values(response.data)[0].adminAccess === false) {
             userInfoObj.adminAccess = false;
@@ -34,6 +34,7 @@ function App() {
       }
     });
   }, []);
+  console.warn(user, admin);
   return (
     <>
       <Router>

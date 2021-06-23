@@ -29,12 +29,25 @@ const getUserbyUid = (uid) => new Promise((resolve, reject) => {
 
 const getSingleUser = (firebaseKey) => new Promise((resolve, reject) => {
   axios.get(`${dbURL}/user/${firebaseKey}.json`)
-    .then((response) => resolve(response.data.uid))
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+const updateAdmin = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbURL}/user/${firebaseKey}.json`)
+    .then(() => getUsers().then(resolve))
+    .catch((error) => reject(error));
+});
+const updateAdminAccess = (firebaseKey, adminObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbURL}/user/${firebaseKey}.json`, adminObj)
+    .then(() => getUsers().then(resolve))
     .catch((error) => reject(error));
 });
 export {
   createUser,
   getUsers,
   getUserbyUid,
-  getSingleUser
+  getSingleUser,
+  updateAdmin,
+  updateAdminAccess
 };
