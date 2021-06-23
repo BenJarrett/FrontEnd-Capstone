@@ -58,7 +58,8 @@ const NavBar = ({ admin, user }) => {
             <NavItem>
               <Link className="nav-link" to="/staff-picks">Staff Picks</Link>
             </NavItem>
-
+            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+            <Button className='nav-link' color='link' onClick={signInUser}>Sign In</Button>
             {admin && authenticated()}
           {user && authenticatedUser()}
           <NavItem>
@@ -68,12 +69,12 @@ const NavBar = ({ admin, user }) => {
                   {
                   admin
                     ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                    : <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+                    : ''
                   }
                   {
                     user
                       ? <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
-                      : <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+                      : ''
                   }
                   {
                     user !== admin

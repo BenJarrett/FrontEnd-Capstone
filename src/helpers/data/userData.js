@@ -21,9 +21,20 @@ const createUser = (userObj) => new Promise((resolve, reject) => {
 });
 
 const getUserbyUid = (uid) => new Promise((resolve, reject) => {
+  console.warn(uid);
   axios.get(`${dbURL}/user.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => resolve(response))
     .catch((error) => reject(error));
 });
 
-export { createUser, getUsers, getUserbyUid };
+const getSingleUser = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbURL}/user/${firebaseKey}.json`)
+    .then((response) => resolve(response.data.uid))
+    .catch((error) => reject(error));
+});
+export {
+  createUser,
+  getUsers,
+  getUserbyUid,
+  getSingleUser
+};

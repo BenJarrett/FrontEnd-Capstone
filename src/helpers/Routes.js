@@ -16,6 +16,7 @@ export default function Routes({
   user,
   admin
 }) {
+  console.warn(user, admin);
   return (
     <div>
       <Switch>

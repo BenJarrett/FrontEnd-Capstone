@@ -13,7 +13,6 @@ function App() {
     firebase.auth().onAuthStateChanged((authed) => {
       if (authed) {
         const userInfoObj = {
-          adminAccess: false,
           fullName: authed.displayName,
           profileImage: authed.photoURL,
           uid: authed.uid,
@@ -21,33 +20,20 @@ function App() {
         };
         getUserbyUid(authed.uid).then((response) => {
           if (Object.values(response.data).length === 0) {
+            userInfoObj.adminAccess = false;
             createUser(userInfoObj).then((resp) => setUser(resp));
-          } else {
+          } if (Object.values(response.data)[0].adminAccess === true) {
+            userInfoObj.adminAccess = true;
+            setUser(userInfoObj);
+            setAdmin(userInfoObj);
+          } if (Object.values(response.data)[0].adminAccess === false) {
+            userInfoObj.adminAccess = false;
             setUser(userInfoObj);
           }
         });
-        setUser(userInfoObj);
-      } else if (authed && (user.adminAccess === true)) {
-        setAdmin(true);
-      } else if ((user || user === null) || (admin || admin === null)) {
-        setUser(false);
-        setAdmin(false);
       }
     });
   }, []);
-  console.warn(admin);
-  console.warn(user);
-
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged((authed) => {
-  //     if (authed && (user.adminAccess === true)) {
-  //       setAdmin(true);
-  //       console.warn('I am working');
-  //     } else if (admin || admin === null) {
-  //       setAdmin(false);
-  //     }
-  //   });
-  // }, []);
   return (
     <>
       <Router>

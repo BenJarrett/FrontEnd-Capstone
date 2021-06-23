@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { removeStaffMember } from '../../helpers/data/staffData';
 import StaffForm from './StaffForm';
+import { getSingleUser } from '../../helpers/data/userData';
 
 const StaffCard = ({
   firebaseKey,
@@ -29,7 +30,12 @@ const StaffCard = ({
       case 'edit':
         setEditing((prevState) => !prevState);
         break;
-      case 'add-remove-admin-access':
+      case 'admin':
+        getSingleUser(fbKey).then((response) => {
+          // Object.values(response.data)[0].adminAccess = true;
+          console.warn(response);
+        });
+        break;
       default:
         console.warn('No Staff Members');
     }
@@ -40,7 +46,7 @@ const StaffCard = ({
       <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : 'Edit Employee Information'}
       </Button>
-      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }}>Give Admin Access</Button>
+      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'admin')}>Give Admin Access</Button>
     </div>
   );
   return (
