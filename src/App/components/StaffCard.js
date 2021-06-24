@@ -33,13 +33,21 @@ const StaffCard = ({
       case 'admin':
         updateAdmin(fbKey).then(() => {
           const adminObj = { adminAccess: true };
+          // eslint-disable-next-line
+          window.alert('Do you want to grant this user admin access?');
           updateAdminAccess(fbKey, adminObj);
+          // eslint-disable-next-line
+          window.alert('Access Granted!');
         });
         break;
       case 'lose-admin':
         updateAdmin(fbKey).then(() => {
           const adminObj = { adminAccess: false };
+          // eslint-disable-next-line
+          window.alert('Do you want to remove admin access?');
           updateAdminAccess(fbKey, adminObj);
+          // eslint-disable-next-line
+          window.alert('Access Revoked!');
         });
         break;
       default:
@@ -47,19 +55,27 @@ const StaffCard = ({
     }
   };
   const editView = (fbKey) => (
-    <div>
-      <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Remove Staff Member</Button>
-      <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
-        {editing ? 'Close Form' : 'Edit Employee Information'}
+    <div className="staff-buttons">
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'edit')}>
+        {editing ? 'Close Form' : <i className="fas fa-pencil-alt"></i>}
       </Button>
-      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'admin')}>Give Admin Access</Button>
-      <Button style={{ backgroundColor: '#34653C', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'lose-admin')}>Revoke Admin Access</Button>
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'delete')}><i className="fas fa-user-slash"></i></Button>
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'admin')}><i className="fas fa-unlock"></i></Button>
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'lose-admin')}><i className="fas fa-lock"></i></Button>
     </div>
   );
   return (
         <Card>
           <CardBody>
-         <CardTitle tag="h5">{fullName}</CardTitle>
+         <CardTitle className="staffCardTitle" tag="h5">{fullName}</CardTitle>
          <hr></hr>
          </CardBody>
          <img width="100%" src={profileImage} className="photo" alt="Card image cap" />

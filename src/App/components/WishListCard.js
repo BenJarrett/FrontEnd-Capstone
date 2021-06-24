@@ -17,6 +17,10 @@ const WishlistCard = ({
   name,
   image,
   price,
+  sFAisle,
+  sFBay,
+  sFLevel,
+  sFStock,
   setWishlists
 
 }) => {
@@ -27,7 +31,6 @@ const WishlistCard = ({
           .then(setWishlists);
         break;
       default:
-        console.warn('No Items in Wishlist!');
     }
   };
   const deleteCardView = (fbKey) => (
@@ -45,6 +48,10 @@ const WishlistCard = ({
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFAsile: {sFAisle}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFBay: {sFBay}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFLevel: {sFLevel}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFStock: {sFStock}</CardSubtitle>
          { deleteCardView(firebaseKey) }
          </CardBody>
          </Card>
@@ -57,6 +64,10 @@ WishlistCard.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.string,
+  sFAisle: PropTypes.string,
+  sFBay: PropTypes.string,
+  sFLevel: PropTypes.string,
+  sFStock: PropTypes.string,
   setWishlists: PropTypes.func
 };
 export default WishlistCard;

@@ -16,7 +16,7 @@ function Products({
 
   return (
     <div className="this">
-    <h1>All Products</h1>
+    <h1>Complete Catalog</h1>
       <div className="card-container">
       {products.map((productInfo) => (
        <ProudctsCard
@@ -26,6 +26,10 @@ function Products({
        image={productInfo.image}
        price={productInfo.price}
        name={productInfo.name}
+       sFAisle={productInfo.sFAisle}
+       sFBay={productInfo.sFBay}
+       sFLevel={productInfo.sFLevel}
+       sFStock={productInfo.sFStock}
        user={user}
        admin={admin}
        setProducts={setProducts}

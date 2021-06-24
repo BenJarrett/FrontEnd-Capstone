@@ -43,10 +43,10 @@ const StaffForm = ({
     <Form id='addStaffMemberForm' autoComplete='off' onSubmit={handleSubmit}>
         <h2>Staff Form: </h2>
         <FormGroup>
-          <Label for="firstName">First Name:</Label>
+          <Label for="fullName">Name:</Label>
           <Input
-            name='firstName'
-            id='firstName'
+            name='fullName'
+            id='full'
             value={staffMember.fullName}
             type='text'
             placeholder='Enter the First Name of the Employee'
@@ -64,18 +64,11 @@ const StaffForm = ({
             onChange={handleInputChange}
           />
         </FormGroup>
-        <FormGroup>
-        <Label for="adminAccess">Admin Access:</Label>
-          <Input
-            name='adminAccess'
-            id='adminAccess'
-            value={staffMember.adminAccess}
-            type='checkbox'
-            placeholder='Give this Employee Admin rights? '
-            onChange={handleInputChange}
-          />
-        </FormGroup>
-        <Button type='submit'>Submit</Button>
+        <div className="submit-icon">
+        <Button style={{
+          color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
+        }} type='submit'><i className="fas fa-check-double"></i></Button>
+        </div>
       </Form>
     </div>
   );

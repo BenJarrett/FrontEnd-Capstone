@@ -25,7 +25,7 @@ const NavBar = ({ admin, user }) => {
   <NavItem>
               <Link className="nav-link" to="/staff">Staff</Link>
             </NavItem>
-            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+            {/* <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button> */}
   </>
 
   );
@@ -33,14 +33,16 @@ const NavBar = ({ admin, user }) => {
   const authenticatedUser = () => (
     <>
   <NavItem>
-    <Link className="nav-link" id="user-wishlist-id" to="/user-list">Current List</Link>
+    <Link className="nav-link" id="user-wishlist-id" to="/user-list">Wish List</Link>
   </NavItem>
-            <Button className='nav-link' color='link' onClick={signOutUser}>Logout</Button>
+  <Button style={{
+    color: 'white', backgroundColor: 'transparent', border: 'transparent',
+  }} onClick={signOutUser}><i className="fas fa-sign-out-alt"></i></Button>
   </>
   );
   return (
-            <div>
-      <Navbar className="nav-bar" light expand="md">
+            <div className="nav-bar">
+      <Navbar className="nav-bar" dark expand="md">
       <NavbarBrand href="/">
       </NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -50,7 +52,7 @@ const NavBar = ({ admin, user }) => {
               <Link className="nav-link" to="/">Home</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/all-products">All Products</Link>
+              <Link className="nav-link" to="/all-products">Complete Catalog</Link>
             </NavItem>
             <NavItem>
               <Link className="nav-link" to="/on-sale">On Sale</Link>
@@ -62,7 +64,9 @@ const NavBar = ({ admin, user }) => {
             {/* <Button className='nav-link' color='link' onClick={signInUser}>Sign In</Button> */}
             {admin && authenticated()}
           {user ? authenticatedUser()
-            : <Button color="link" onClick={signInUser}>Sign In</Button>
+            : <Button style={{
+              color: 'white', backgroundColor: 'transparent', border: 'transparent',
+            }} onClick={signInUser}><i className="fas fa-sign-in-alt"></i></Button>
           }
           <NavItem>
             <NavItem>

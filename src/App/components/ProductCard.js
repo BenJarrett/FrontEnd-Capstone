@@ -18,6 +18,10 @@ const ProudctsCard = ({
   name,
   image,
   price,
+  sFAisle,
+  sFBay,
+  sFLevel,
+  sFStock,
   admin,
   productId,
   setProducts,
@@ -48,7 +52,6 @@ const ProudctsCard = ({
       }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
       <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : <i className="fas fa-user-edit"></i>
-
 }
       </Button>
     </div>
@@ -56,7 +59,7 @@ const ProudctsCard = ({
   const userView = (fbKey) => (
     <div className='add-wishlist'>
       <Button
-       onClick={() => handleClick(fbKey, 'add-to-wishlist')}> Add To Wishlist</Button>
+       onClick={() => handleClick(fbKey, 'add-to-wishlist')}><i className="fas fa-plus"></i></Button>
     </div>
   );
   return (
@@ -68,6 +71,10 @@ const ProudctsCard = ({
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFAisle: {sFAisle}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFBay: {sFBay}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFLevel: {sFLevel}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">sFStock: {sFStock}</CardSubtitle>
          { admin && editView(firebaseKey) }
          { user && userView(firebaseKey) }
 
@@ -79,6 +86,12 @@ const ProudctsCard = ({
          price={price}
          image={image}
          name={name}
+         sFAisle={sFAisle}
+         sFBay={sFBay}
+         sFLevel={sFLevel}
+         sFStock={sFStock}
+         user={user}
+
          />
          }
           {
@@ -90,6 +103,10 @@ const ProudctsCard = ({
          price={price}
          image={image}
          name={name}
+         sFAisle={sFAisle}
+         sFBay={sFBay}
+         sFLevel={sFLevel}
+         sFStock={sFStock}
          user={user}
          />
          }
@@ -105,6 +122,10 @@ ProudctsCard.propTypes = {
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
+  sFAisle: PropTypes.string,
+  sFBay: PropTypes.string,
+  sFLevel: PropTypes.string,
+  sFStock: PropTypes.string,
   productId: PropTypes.string,
   setProducts: PropTypes.func,
 };

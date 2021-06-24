@@ -24,6 +24,10 @@ function CurrentList({
        image={productInfo.image}
        price={productInfo.price}
        name={productInfo.name}
+       sFAisle={productInfo.sFAisle}
+       sFBay={productInfo.sFBay}
+       sFLevel={productInfo.sFLevel}
+       sFStock={productInfo.sFStock}
        user={user}
        setWishlists={setWishlists}
        wishlists={wishlists}
