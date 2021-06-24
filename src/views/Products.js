@@ -31,6 +31,7 @@ function Products({
        sFBay={productInfo.sFBay}
        sFLevel={productInfo.sFLevel}
        sFStock={productInfo.sFStock}
+       onSale={productInfo.onSale}
        user={user}
        admin={admin}
        setProducts={setProducts}

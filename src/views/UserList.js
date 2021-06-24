@@ -16,7 +16,7 @@ function CurrentList({
   return (
     <div className="this">
     <h1>Your List</h1>
-      <div className="wishlist-container">
+      <div className="card-container">
       {wishlists.map((productInfo) => (
        <WishlistCard
        key={productInfo.firebaseKey}

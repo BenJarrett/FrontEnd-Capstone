@@ -24,6 +24,7 @@ const ProductsForm = ({
   wHBay,
   wHLevel,
   wHStock,
+  onSale,
   setProducts
 
 }) => {
@@ -40,14 +41,22 @@ const ProductsForm = ({
     wHBay: wHBay || '',
     wHLevel: wHLevel || '',
     wHStock: wHStock || '',
+    onSale: onSale || false,
     firebaseKey: firebaseKey || null
   });
   const history = useHistory();
 
+  // const handleInputChange = (e) => {
+  //   setProduct((prevState) => ({
+  //     ...prevState,
+  //     [e.target.name]: e.target.value
+  //   }));
+  // };
   const handleInputChange = (e) => {
     setProduct((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      [e.target.name]:
+        e.target.name === 'onSale' ? e.target.checked : e.target.value,
     }));
   };
 
@@ -218,16 +227,16 @@ const ProductsForm = ({
             onChange={handleInputChange}
           />
         </FormGroup> */}
-      <FormGroup>
-        <Label for="onSale">On Sale?:</Label>
+      <FormGroup check>
+        <Label check for="onSale">
           <Input
             name='onSale'
             id='onSale'
-            value={product.onSale}
+            checked={product.onSale}
             type='checkbox'
-            placeholder='Is this Product Currently on Sale? '
             onChange={handleInputChange}
-          />
+          /> On Sale?:
+          </Label>
         </FormGroup>
         <Button type='submit'>Submit</Button>
       </Form>
@@ -248,6 +257,7 @@ ProductsForm.propTypes = {
   wHBay: PropTypes.string,
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,
+  onSale: PropTypes.bool,
   firebaseKey: PropTypes.string,
   setProducts: PropTypes.func
 };

@@ -50,6 +50,7 @@ const WishlistCard = ({
          <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
+         <hr></hr>
          { deleteCardView(firebaseKey) }
          </CardBody>
          </Card>

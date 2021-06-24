@@ -80,6 +80,7 @@ const StaffCard = ({
          </CardBody>
          <img width="100%" src={profileImage} className="photo" alt="Card image cap" />
          <CardBody>
+         <hr></hr>
          { admin && editView(firebaseKey) }
          {
          editing && <StaffForm

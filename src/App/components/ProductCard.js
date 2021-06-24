@@ -27,6 +27,7 @@ const ProudctsCard = ({
   wHBay,
   wHLevel,
   wHStock,
+  onSale,
   admin,
   productId,
   setProducts,
@@ -101,6 +102,7 @@ const ProudctsCard = ({
          wHBay={wHBay}
          wHLevel={wHLevel}
          wHStock={wHStock}
+         onSale={onSale}
          />
          }
           {
@@ -141,6 +143,7 @@ ProudctsCard.propTypes = {
   wHBay: PropTypes.string,
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,
+  onSale: PropTypes.bool,
   productId: PropTypes.string,
   setProducts: PropTypes.func,
 };
