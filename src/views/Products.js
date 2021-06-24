@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProudctsCard from '../App/components/ProductCard';
 import { getProducts } from '../helpers/data/productsData';
+import AllProductsHeader from '../App/components/AllProductsHeader';
 
 function Products({
   user,
@@ -16,7 +17,7 @@ function Products({
 
   return (
     <div className="this">
-    <h1>Complete Catalog</h1>
+      <AllProductsHeader/>
       <div className="card-container">
       {products.map((productInfo) => (
        <ProudctsCard

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import './App.scss';
 import NavBar from './components/NavBar';
 import Routes from '../helpers/Routes';
@@ -31,6 +32,9 @@ function App() {
             setUser(userInfoObj);
           }
         });
+      } else if (user || user === null) {
+        setUser(false);
+        setAdmin(false);
       }
     });
   }, []);

@@ -22,6 +22,11 @@ const ProudctsCard = ({
   sFBay,
   sFLevel,
   sFStock,
+  onSalePrice,
+  wHAsile,
+  wHBay,
+  wHLevel,
+  wHStock,
   admin,
   productId,
   setProducts,
@@ -46,9 +51,9 @@ const ProudctsCard = ({
     }
   };
   const editView = (fbKey) => (
-    <div>
+    <div className="admin-button">
       <Button style={{
-        color: 'black', backgroundColor: 'transparent', margin: '10px', textAlign: 'left', border: 'transparent',
+        color: 'black', backgroundColor: 'transparent', textAlign: 'center', border: 'transparent',
       }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
       <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }} onClick={() => handleClick(fbKey, 'edit')}>
         {editing ? 'Close Form' : <i className="fas fa-user-edit"></i>
@@ -58,23 +63,24 @@ const ProudctsCard = ({
   );
   const userView = (fbKey) => (
     <div className='add-wishlist'>
-      <Button
+      <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }}
        onClick={() => handleClick(fbKey, 'add-to-wishlist')}><i className="fas fa-plus"></i></Button>
     </div>
   );
   return (
         <Card>
           <CardBody>
-         <CardTitle tag="h5">Product Name: {name}</CardTitle>
+         <CardTitle tag="h5">{name}</CardTitle>
          <hr></hr>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFAisle: {sFAisle}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFBay: {sFBay}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFLevel: {sFLevel}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFStock: {sFStock}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Aisle: {sFAisle}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Stock: {sFStock}</CardSubtitle>
+         <hr></hr>
          { admin && editView(firebaseKey) }
          { user && userView(firebaseKey) }
 
@@ -90,8 +96,11 @@ const ProudctsCard = ({
          sFBay={sFBay}
          sFLevel={sFLevel}
          sFStock={sFStock}
-         user={user}
-
+         onSalePrice={onSalePrice}
+         wHAsile={wHAsile}
+         wHBay={wHBay}
+         wHLevel={wHLevel}
+         wHStock={wHStock}
          />
          }
           {
@@ -101,6 +110,7 @@ const ProudctsCard = ({
          firebaseKey={firebaseKey}
          productId={productId}
          price={price}
+         onSalePrice={onSalePrice}
          image={image}
          name={name}
          sFAisle={sFAisle}
@@ -126,6 +136,11 @@ ProudctsCard.propTypes = {
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
   sFStock: PropTypes.string,
+  onSalePrice: PropTypes.string,
+  wHAsile: PropTypes.string,
+  wHBay: PropTypes.string,
+  wHLevel: PropTypes.string,
+  wHStock: PropTypes.string,
   productId: PropTypes.string,
   setProducts: PropTypes.func,
 };

@@ -1,17 +1,23 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import HomePageHeader from './HomePageHeader';
+import MissionStatement from './MissionStatement';
+import ClickHere from './ClickHere';
 
 export default function Home() {
   return (
     <div className="home-component">
-      <h1 className="home-text">Home</h1>
+      <HomePageHeader/>
+      <MissionStatement/>
+      <ClickHere/>
       <div className="home-carousel"
   style={{
     paddingBottom: '30px',
     position: 'relative'
   }}
 >
+  <h1>Featured Products</h1>
   <Carousel
     additionalTransfrom={0}
     arrows

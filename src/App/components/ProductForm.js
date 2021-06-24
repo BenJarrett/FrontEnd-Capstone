@@ -19,6 +19,11 @@ const ProductsForm = ({
   sFLevel,
   firebaseKey,
   sFStock,
+  onSalePrice,
+  wHAsile,
+  wHBay,
+  wHLevel,
+  wHStock,
   setProducts
 
 }) => {
@@ -30,6 +35,11 @@ const ProductsForm = ({
     sFBay: sFBay || '',
     sFLevel: sFLevel || '',
     sFStock: sFStock || '',
+    onSalePrice: onSalePrice || '',
+    wHAsile: wHAsile || '',
+    wHBay: wHBay || '',
+    wHLevel: wHLevel || '',
+    wHStock: wHStock || '',
     firebaseKey: firebaseKey || null
   });
   const history = useHistory();
@@ -134,28 +144,17 @@ const ProductsForm = ({
           />
         </FormGroup>
         <FormGroup>
-        <Label for="materialsUsed">Materials Include:</Label>
+        <Label for="onSalePrice">Sale Price:</Label>
           <Input
-            name='materialsUsed'
-            id='materialsUsed'
-            value={product.materialsUsed}
-            type='text'
-            placeholder='Add Materials Used to Create Product'
-            onChange={handleInputChange}
-          />
-        </FormGroup>
-        <FormGroup>
-        <Label for="salePrice">Sale Price:</Label>
-          <Input
-            name='salePrice'
-            id='salePrice'
-            value={product.salePrice}
+            name='onSalePrice'
+            id='onSalePrice'
+            value={product.onSalePrice}
             type='text'
             placeholder='If the Product is on Sale, What is the Price? '
             onChange={handleInputChange}
           />
         </FormGroup>
-        <FormGroup>
+        {/* <FormGroup>
         <Label for="type">Type of Product:</Label>
           <Input
             name='type'
@@ -165,7 +164,7 @@ const ProductsForm = ({
             placeholder='What Type of Produc is it?'
             onChange={handleInputChange}
           />
-        </FormGroup>
+        </FormGroup> */}
         <FormGroup>
         <Label for="wHAsile">Warehouse Aisle:</Label>
           <Input
@@ -193,7 +192,7 @@ const ProductsForm = ({
           <Input
             name='wHLevel'
             id='wHLevel'
-            value={product.wHBwHLevelay}
+            value={product.wHLevel}
             type='text'
             placeholder='Warehouse Level'
             onChange={handleInputChange}
@@ -208,7 +207,7 @@ const ProductsForm = ({
             onChange={handleInputChange}
           />
         </FormGroup>
-        <FormGroup>
+        {/* <FormGroup>
         <Label for="staffPick">Staff Pick?:</Label>
           <Input
             name='staffPick'
@@ -218,7 +217,7 @@ const ProductsForm = ({
             placeholder='Is this Product a Staff Pick?'
             onChange={handleInputChange}
           />
-        </FormGroup>
+        </FormGroup> */}
       <FormGroup>
         <Label for="onSale">On Sale?:</Label>
           <Input
@@ -244,6 +243,11 @@ ProductsForm.propTypes = {
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
   sFStock: PropTypes.string,
+  onSalePrice: PropTypes.string,
+  wHAsile: PropTypes.string,
+  wHBay: PropTypes.string,
+  wHLevel: PropTypes.string,
+  wHStock: PropTypes.string,
   firebaseKey: PropTypes.string,
   setProducts: PropTypes.func
 };

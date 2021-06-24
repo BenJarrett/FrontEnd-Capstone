@@ -24,6 +24,10 @@ function OnSaleProducts({
        image={productInfo.image}
        price={productInfo.price}
        name={productInfo.name}
+       sFAisle={productInfo.sFAisle}
+       sFBay={productInfo.sFBay}
+       sFLevel={productInfo.sFLevel}
+       onSalePrice={productInfo.onSalePrice}
        setOnSale={setOnSale}
        onSale={onSale}
        admin={admin}

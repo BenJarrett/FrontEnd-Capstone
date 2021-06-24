@@ -18,6 +18,10 @@ const OnSaleProudctsCard = ({
   name,
   price,
   image,
+  sFAisle,
+  sFBay,
+  sFLevel,
+  onSalePrice,
   productId,
   setOnSale,
 }) => {
@@ -59,10 +63,16 @@ const OnSaleProudctsCard = ({
           <CardBody>
          <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Sale Price: {onSalePrice}</CardSubtitle>
+
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
+
          { admin && editView(firebaseKey) }
          { user && userView(firebaseKey) }
 
@@ -74,6 +84,10 @@ const OnSaleProudctsCard = ({
          price={price}
          image={image}
          name={name}
+         sFAisle={sFAisle}
+         sFBay={sFBay}
+         sFLevel={sFLevel}
+         onSalePrice={onSalePrice}
          admin={admin}
          />
          }
@@ -86,6 +100,9 @@ const OnSaleProudctsCard = ({
          price={price}
          image={image}
          name={name}
+         sFAisle={sFAisle}
+         sFBay={sFBay}
+         sFLevel={sFLevel}
          user={user}
          />
          }
@@ -99,6 +116,10 @@ OnSaleProudctsCard.propTypes = {
   price: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
+  sFAisle: PropTypes.string,
+  sFBay: PropTypes.string,
+  sFLevel: PropTypes.string,
+  onSalePrice: PropTypes.string,
   admin: PropTypes.any,
   user: PropTypes.any,
   productId: PropTypes.string,

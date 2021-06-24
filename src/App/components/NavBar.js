@@ -37,7 +37,7 @@ const NavBar = ({ admin, user }) => {
   </NavItem>
   <Button style={{
     color: 'white', backgroundColor: 'transparent', border: 'transparent',
-  }} onClick={signOutUser}><i className="fas fa-sign-out-alt"></i></Button>
+  }} onClick={signOutUser}><i className="fas fa-sign-out-alt"></i> Sign Out</Button>
   </>
   );
   return (
@@ -66,7 +66,7 @@ const NavBar = ({ admin, user }) => {
           {user ? authenticatedUser()
             : <Button style={{
               color: 'white', backgroundColor: 'transparent', border: 'transparent',
-            }} onClick={signInUser}><i className="fas fa-sign-in-alt"></i></Button>
+            }} onClick={signInUser}><i className="fas fa-sign-in-alt"></i> Sign In</Button>
           }
           <NavItem>
             <NavItem>

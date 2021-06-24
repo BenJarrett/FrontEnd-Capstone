@@ -20,7 +20,6 @@ const WishlistCard = ({
   sFAisle,
   sFBay,
   sFLevel,
-  sFStock,
   setWishlists
 
 }) => {
@@ -48,10 +47,9 @@ const WishlistCard = ({
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFAsile: {sFAisle}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFBay: {sFBay}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFLevel: {sFLevel}</CardSubtitle>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">sFStock: {sFStock}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
          { deleteCardView(firebaseKey) }
          </CardBody>
          </Card>
@@ -67,7 +65,6 @@ WishlistCard.propTypes = {
   sFAisle: PropTypes.string,
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
-  sFStock: PropTypes.string,
   setWishlists: PropTypes.func
 };
 export default WishlistCard;
