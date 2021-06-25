@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import ProudctsCard from '../App/components/ProductCard';
 import { getOnSaleProducts } from '../helpers/data/productsData';
 import OnSaleProudctsCard from '../App/components/OnSaleProductCard';
-// import { useState } from 'react';
+import OnSaleHeader from '../App/components/OnSaleHeader';
 
 function OnSaleProducts({
   admin,
@@ -15,7 +14,7 @@ function OnSaleProducts({
   }, []);
   return (
     <div className="this">
-    <h1>On Sale!</h1>
+      <OnSaleHeader/>
       <div className="card-container">
         {onSale.map((productInfo) => (
        <OnSaleProudctsCard

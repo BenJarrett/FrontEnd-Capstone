@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import StaffCard from '../App/components/StaffCard';
 import { getUsers } from '../helpers/data/userData';
+import StaffHeader from '../App/components/StaffHeader';
 
 function staffMembers({
   admin,
@@ -14,7 +15,7 @@ function staffMembers({
 
   return (
     <div className="this">
-    <h1>Staff Members</h1>
+      <StaffHeader/>
       <div className="card-container">
         {staff.map((productInfo) => (
        <StaffCard

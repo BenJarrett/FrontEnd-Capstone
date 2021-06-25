@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import ProudctsCard from '../App/components/ProductCard';
 import { getChosenStaffPicks } from '../helpers/data/productsData';
 import StaffPickCard from '../App/components/StaffPickCard';
-// import { useState } from 'react';
+import StaffPicksHeader from '../App/components/StaffPicksHeader';
 
 function ChosenStaffPicks({
   admin,
@@ -15,7 +14,7 @@ function ChosenStaffPicks({
   }, []);
   return (
     <div className="this">
-    <h1>Favorites from our Staff!</h1>
+      <StaffPicksHeader/>
       <div className="card-container">
         {staffPicks.map((productInfo) => (
        <StaffPickCard
