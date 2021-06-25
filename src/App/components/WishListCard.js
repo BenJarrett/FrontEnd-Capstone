@@ -1,10 +1,8 @@
 import React from 'react';
-// import { useHistory } from 'react-router-dom';
 import {
   Card,
   Button,
   CardTitle,
-  // CardLink,
   CardBody,
   CardSubtitle
 } from 'reactstrap';
@@ -34,19 +32,25 @@ const WishlistCard = ({
   };
   const deleteCardView = (fbKey) => (
     <div className='userDelete'>
-      <Button onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i> Delete</Button>
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', textAlign: 'center', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
     </div>
   );
 
   return (
         <Card>
           <CardBody>
-         <CardTitle tag="h5">Product Name: {name}</CardTitle>
+          <div style={{ textAlign: 'center' }}>
+         <CardTitle tag="h5">{name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">price: {price}</CardSubtitle>
-         </CardBody>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">{price}</CardSubtitle>
+          </div>
+          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
+         <CardTitle style={{ textAlign: 'center' }} tag="h5">Location</CardTitle>
+           <hr></hr>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
