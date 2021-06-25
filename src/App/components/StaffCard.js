@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import {
   Card,
   Button,
   CardTitle,
   CardBody,
-  // CardSubtitle
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { removeStaffMember } from '../../helpers/data/staffData';
@@ -17,7 +15,7 @@ const StaffCard = ({
   setStaff,
   admin,
   fullName,
-  profileImage
+  profileImage,
 }) => {
   const [editing, setEditing] = useState(false);
 
@@ -71,6 +69,7 @@ const StaffCard = ({
         color: 'black', backgroundColor: 'transparent', margin: '2px', border: 'transparent',
       }} onClick={() => handleClick(fbKey, 'lose-admin')}><i className="fas fa-lock"></i></Button>
     </div>
+
   );
   return (
         <Card>

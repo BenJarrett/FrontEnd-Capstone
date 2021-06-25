@@ -22,6 +22,7 @@ function staffMembers({
        firebaseKey={productInfo.firebaseKey}
        profileImage={productInfo.profileImage}
        fullName={productInfo.fullName}
+       adminAccess={productInfo.adminAccess}
        user={user}
        admin={admin}
        staff={staff}
