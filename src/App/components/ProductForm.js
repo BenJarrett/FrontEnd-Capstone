@@ -70,7 +70,6 @@ const ProductsForm = ({
   return (
     <div className='Form'>
     <Form id='addProductForm' autoComplete='off' onSubmit={handleSubmit}>
-        <h2>Product Form: </h2>
         <FormGroup>
           <Label for="name">Name:</Label>
           <Input
@@ -210,17 +209,6 @@ const ProductsForm = ({
             type='checkbox'
             onChange={handleInputChange}
           /> On Sale?:
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-        <Label check for="staffPick">
-          <Input
-            name='staffPick'
-            id='staffPick'
-            checked={product.staffPick}
-            type='checkbox'
-            onChange={handleInputChange}
-          /> Staff Pick?:
           </Label>
         </FormGroup>
         <Button type='submit'>Submit</Button>

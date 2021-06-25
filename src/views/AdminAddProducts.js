@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import ProductsForm from '../App/components/ProductForm';
 import { getProducts } from '../helpers/data/productsData';
+import ProductFormHeader from '../App/components/StaffFormHeader';
 
 function AddProduct() {
   const [products, setProducts] = useState([]);
@@ -10,6 +10,7 @@ function AddProduct() {
   }, []);
   return (
     <>
+    <ProductFormHeader/>
       <ProductsForm setProducts={setProducts} products={products} />
     </>
   );
