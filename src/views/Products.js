@@ -37,6 +37,7 @@ function Products({
        wHStock={productInfo.wHStock}
        onSale={productInfo.onSale}
        onSalePrice={productInfo.onSalePrice}
+       staffPick={productInfo.staffPick}
        user={user}
        admin={admin}
        setProducts={setProducts}

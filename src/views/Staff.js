@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import { getStaffList } from '../helpers/data/staffData';
 import StaffCard from '../App/components/StaffCard';
 import { getUsers } from '../helpers/data/userData';
 

@@ -33,7 +33,6 @@ const OnSaleProudctsCard = ({
 }) => {
   const [editing, setEditing] = useState(false);
   const [adding, setAdding] = useState(false);
-  console.warn(firebaseKey);
   const handleClick = (fbKey, type) => {
     switch (type) {
       case 'delete':
@@ -47,7 +46,7 @@ const OnSaleProudctsCard = ({
         setAdding((prevState) => !prevState);
         break;
       default:
-        console.warn('No Projects');
+        console.warn('No Products on Sale');
     }
   };
   const editView = (fbKey) => (
@@ -71,7 +70,7 @@ const OnSaleProudctsCard = ({
         <Card>
           <CardBody>
           <div style={{ textAlign: 'center' }}>
-         <CardTitle tag="h5">Product Name: {name}</CardTitle>
+         <CardTitle tag="h5">{name}</CardTitle>
          <hr></hr>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Original Price: {price}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Sale Price: {onSalePrice}</CardSubtitle>
@@ -110,6 +109,7 @@ const OnSaleProudctsCard = ({
          wHLevel={wHLevel}
          wHStock={wHStock}
          admin={admin}
+
          />
          }
          {

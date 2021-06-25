@@ -7,6 +7,7 @@ import StaffPickCard from '../App/components/StaffPickCard';
 
 function ChosenStaffPicks({
   admin,
+  user
 }) {
   const [staffPicks, setStaffPicks] = useState([]);
   useEffect(() => {
@@ -23,7 +24,16 @@ function ChosenStaffPicks({
        image={productInfo.image}
        price={productInfo.price}
        name={productInfo.name}
+       sFAisle={productInfo.sFAisle}
+       sFBay={productInfo.sFBay}
+       sFLevel={productInfo.sFLevel}
+       sFStock={productInfo.sFStock}
+       wHAisle={productInfo.wHAisle}
+       wHBay={productInfo.wHBay}
+       wHLevel={productInfo.wHLevel}
+       wHStock={productInfo.wHStock}
        admin={admin}
+       user={user}
        setStaffPicks={setStaffPicks}
        staffPicks={staffPicks}
        />
@@ -35,6 +45,7 @@ function ChosenStaffPicks({
 
 ChosenStaffPicks.propTypes = {
   admin: PropTypes.any,
+  user: PropTypes.any,
 };
 
 export default ChosenStaffPicks;

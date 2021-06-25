@@ -24,6 +24,7 @@ const ProductsForm = ({
   wHBay,
   wHLevel,
   wHStock,
+  staffPick,
   onSale,
   setProducts
 
@@ -42,16 +43,11 @@ const ProductsForm = ({
     wHLevel: wHLevel || '',
     wHStock: wHStock || '',
     onSale: onSale || false,
+    staffPick: staffPick || false,
     firebaseKey: firebaseKey || null
   });
   const history = useHistory();
 
-  // const handleInputChange = (e) => {
-  //   setProduct((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value
-  //   }));
-  // };
   const handleInputChange = (e) => {
     setProduct((prevState) => ({
       ...prevState,
@@ -163,17 +159,6 @@ const ProductsForm = ({
             onChange={handleInputChange}
           />
         </FormGroup>
-        {/* <FormGroup>
-        <Label for="type">Type of Product:</Label>
-          <Input
-            name='type'
-            id='type'
-            value={product.type}
-            type='text'
-            placeholder='What Type of Produc is it?'
-            onChange={handleInputChange}
-          />
-        </FormGroup> */}
         <FormGroup>
         <Label for="wHAisle">Warehouse Aisle:</Label>
           <Input
@@ -216,17 +201,6 @@ const ProductsForm = ({
             onChange={handleInputChange}
           />
         </FormGroup>
-        {/* <FormGroup>
-        <Label for="staffPick">Staff Pick?:</Label>
-          <Input
-            name='staffPick'
-            id='staffPick'
-            value={product.staffPick}
-            type='checkbox'
-            placeholder='Is this Product a Staff Pick?'
-            onChange={handleInputChange}
-          />
-        </FormGroup> */}
       <FormGroup check>
         <Label check for="onSale">
           <Input
@@ -236,6 +210,17 @@ const ProductsForm = ({
             type='checkbox'
             onChange={handleInputChange}
           /> On Sale?:
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+        <Label check for="staffPick">
+          <Input
+            name='staffPick'
+            id='staffPick'
+            checked={product.staffPick}
+            type='checkbox'
+            onChange={handleInputChange}
+          /> Staff Pick?:
           </Label>
         </FormGroup>
         <Button type='submit'>Submit</Button>
@@ -258,6 +243,7 @@ ProductsForm.propTypes = {
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,
   onSale: PropTypes.bool,
+  staffPick: PropTypes.bool,
   firebaseKey: PropTypes.string,
   setProducts: PropTypes.func
 };

@@ -28,6 +28,7 @@ const ProudctsCard = ({
   wHLevel,
   wHStock,
   onSale,
+  staffPick,
   admin,
   productId,
   setProducts,
@@ -103,6 +104,7 @@ const ProudctsCard = ({
          sFLevel={sFLevel}
          sFStock={sFStock}
          onSalePrice={onSalePrice}
+         staffPick={staffPick}
          wHAisle={wHAisle}
          wHBay={wHBay}
          wHLevel={wHLevel}
@@ -149,6 +151,7 @@ ProudctsCard.propTypes = {
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,
   onSale: PropTypes.bool,
+  staffPick: PropTypes.bool,
   productId: PropTypes.string,
   setProducts: PropTypes.func,
 };
