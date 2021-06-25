@@ -20,7 +20,7 @@ const ProductsForm = ({
   firebaseKey,
   sFStock,
   onSalePrice,
-  wHAsile,
+  wHAisle,
   wHBay,
   wHLevel,
   wHStock,
@@ -37,7 +37,7 @@ const ProductsForm = ({
     sFLevel: sFLevel || '',
     sFStock: sFStock || '',
     onSalePrice: onSalePrice || '',
-    wHAsile: wHAsile || '',
+    wHAisle: wHAisle || '',
     wHBay: wHBay || '',
     wHLevel: wHLevel || '',
     wHStock: wHStock || '',
@@ -175,11 +175,11 @@ const ProductsForm = ({
           />
         </FormGroup> */}
         <FormGroup>
-        <Label for="wHAsile">Warehouse Aisle:</Label>
+        <Label for="wHAisle">Warehouse Aisle:</Label>
           <Input
-            name='wHAsile'
-            id='wHAsile'
-            value={product.wHAsile}
+            name='wHAisle'
+            id='wHAisle'
+            value={product.wHAisle}
             type='text'
             placeholder='Warehouse Aisle'
             onChange={handleInputChange}
@@ -253,7 +253,7 @@ ProductsForm.propTypes = {
   sFLevel: PropTypes.string,
   sFStock: PropTypes.string,
   onSalePrice: PropTypes.string,
-  wHAsile: PropTypes.string,
+  wHAisle: PropTypes.string,
   wHBay: PropTypes.string,
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,

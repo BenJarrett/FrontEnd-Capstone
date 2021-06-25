@@ -23,7 +23,7 @@ const ProudctsCard = ({
   sFLevel,
   sFStock,
   onSalePrice,
-  wHAsile,
+  wHAisle,
   wHBay,
   wHLevel,
   wHStock,
@@ -98,7 +98,7 @@ const ProudctsCard = ({
          sFLevel={sFLevel}
          sFStock={sFStock}
          onSalePrice={onSalePrice}
-         wHAsile={wHAsile}
+         wHAisle={wHAisle}
          wHBay={wHBay}
          wHLevel={wHLevel}
          wHStock={wHStock}
@@ -139,7 +139,7 @@ ProudctsCard.propTypes = {
   sFLevel: PropTypes.string,
   sFStock: PropTypes.string,
   onSalePrice: PropTypes.string,
-  wHAsile: PropTypes.string,
+  wHAisle: PropTypes.string,
   wHBay: PropTypes.string,
   wHLevel: PropTypes.string,
   wHStock: PropTypes.string,
