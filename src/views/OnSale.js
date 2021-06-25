@@ -27,11 +27,16 @@ function OnSaleProducts({
        sFAisle={productInfo.sFAisle}
        sFBay={productInfo.sFBay}
        sFLevel={productInfo.sFLevel}
+       sFStock={productInfo.sFStock}
+       wHAisle={productInfo.wHAisle}
+       wHBay={productInfo.wHBay}
+       wHLevel={productInfo.wHLevel}
+       wHStock={productInfo.wHStock}
        onSalePrice={productInfo.onSalePrice}
-       setOnSale={setOnSale}
-       onSale={onSale}
        admin={admin}
        user={user}
+       setOnSale={setOnSale}
+       onSale={onSale}
        />
         ))}
        </div>

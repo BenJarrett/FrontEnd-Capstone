@@ -20,8 +20,14 @@ const OnSaleProudctsCard = ({
   image,
   sFAisle,
   sFBay,
+  wHAisle,
+  sFStock,
+  wHBay,
+  wHLevel,
+  wHStock,
   sFLevel,
   onSalePrice,
+  onSale,
   productId,
   setOnSale,
 }) => {
@@ -45,34 +51,42 @@ const OnSaleProudctsCard = ({
     }
   };
   const editView = (fbKey) => (
-    <div>
-      <Button style={{ backgroundColor: '#252323', margin: '10px', textAlign: 'left' }} onClick={() => handleClick(fbKey, 'delete')}>Delete Product</Button>
-      <Button style={{ backgroundColor: '#70798C' }} onClick={() => handleClick(fbKey, 'edit')}>
-        {editing ? 'Close Form' : 'Edit Product'}
+    <div className="admin-button">
+      <Button style={{
+        color: 'black', backgroundColor: 'transparent', textAlign: 'center', border: 'transparent',
+      }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
+      <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }} onClick={() => handleClick(fbKey, 'edit')}>
+        {editing ? 'Close Form' : <i className="fas fa-user-edit"></i>
+}
       </Button>
     </div>
   );
   const userView = (fbKey) => (
     <div className='add-wishlist'>
-      <Button
-       onClick={() => handleClick(fbKey, 'add-to-wishlist')}> Add To Wishlist</Button>
+      <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }}
+       onClick={() => handleClick(fbKey, 'add-to-wishlist')}><i className="fas fa-plus"></i></Button>
     </div>
   );
   return (
         <Card>
           <CardBody>
+          <div style={{ textAlign: 'center' }}>
          <CardTitle tag="h5">Product Name: {name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Original Price: {price}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Sale Price: {onSalePrice}</CardSubtitle>
-
+          </div>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
+         <CardTitle style={{ textAlign: 'center' }} tag="h5">Storefront Location</CardTitle>
+         <hr></hr>
+         <div style={{ textAlign: 'center' }}>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
          <hr></hr>
+         </div>
 
          { admin && editView(firebaseKey) }
          { user && userView(firebaseKey) }
@@ -87,8 +101,14 @@ const OnSaleProudctsCard = ({
          name={name}
          sFAisle={sFAisle}
          sFBay={sFBay}
+         onSale={onSale}
          sFLevel={sFLevel}
+         sFStock={sFStock}
          onSalePrice={onSalePrice}
+         wHAisle={wHAisle}
+         wHBay={wHBay}
+         wHLevel={wHLevel}
+         wHStock={wHStock}
          admin={admin}
          />
          }
@@ -101,6 +121,7 @@ const OnSaleProudctsCard = ({
          price={price}
          image={image}
          name={name}
+         onSalePrice={onSalePrice}
          sFAisle={sFAisle}
          sFBay={sFBay}
          sFLevel={sFLevel}
@@ -120,7 +141,13 @@ OnSaleProudctsCard.propTypes = {
   sFAisle: PropTypes.string,
   sFBay: PropTypes.string,
   sFLevel: PropTypes.string,
+  sFStock: PropTypes.string,
   onSalePrice: PropTypes.string,
+  onSale: PropTypes.bool,
+  wHAisle: PropTypes.string,
+  wHBay: PropTypes.string,
+  wHLevel: PropTypes.string,
+  wHStock: PropTypes.string,
   admin: PropTypes.any,
   user: PropTypes.any,
   productId: PropTypes.string,
