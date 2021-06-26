@@ -75,12 +75,12 @@ const ProudctsCard = ({
           <div style={{ textAlign: 'center' }}>
          <CardTitle tag="h5">{name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">{price}</CardSubtitle>
          </div>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
          <CardBody>
-         <CardTitle style={{ textAlign: 'center' }} tag="h5">Storefront Location</CardTitle>
+         <CardTitle style={{ textAlign: 'center' }} tag="h5">Location</CardTitle>
          <hr></hr>
          <div style={{ textAlign: 'center' }}>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Aisle: {sFAisle}</CardSubtitle>

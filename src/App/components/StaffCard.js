@@ -16,6 +16,7 @@ const StaffCard = ({
   admin,
   fullName,
   profileImage,
+  adminAccess
 }) => {
   const [editing, setEditing] = useState(false);
 
@@ -88,6 +89,7 @@ const StaffCard = ({
          fullName={fullName}
          profileImage={profileImage}
          admin={admin}
+         adminAccess={adminAccess}
          setStaff={setStaff}
          />
          }
@@ -102,6 +104,7 @@ StaffCard.propTypes = {
   profileImage: PropTypes.string,
   fullName: PropTypes.string,
   admin: PropTypes.any,
+  adminAccess: PropTypes.bool,
   setStaff: PropTypes.func,
 
 };

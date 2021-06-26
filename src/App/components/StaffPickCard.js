@@ -74,7 +74,7 @@ const StaffPickCard = ({
           <div style={{ textAlign: 'center' }}>
          <CardTitle tag="h5">{name}</CardTitle>
          <hr></hr>
-         <CardSubtitle tag="h6" className="mb-2 text-muted">Price: {price}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">{price}</CardSubtitle>
           </div>
          </CardBody>
          <img width="100%" src={image} className="photo" alt="Card image cap" />
@@ -84,6 +84,7 @@ const StaffPickCard = ({
          <CardSubtitle tag="h6" className="mb-2 text-muted">Asile: {sFAisle}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Bay: {sFBay}</CardSubtitle>
          <CardSubtitle tag="h6" className="mb-2 text-muted">Level: {sFLevel}</CardSubtitle>
+         <CardSubtitle tag="h6" className="mb-2 text-muted">Location</CardSubtitle>
          <hr></hr>
          </div>
          { admin && editView(firebaseKey) }
@@ -106,6 +107,7 @@ const StaffPickCard = ({
          wHLevel={wHLevel}
          wHStock={wHStock}
          admin={admin}
+         user={user}
          staffPick={staffPick}
          />
          }
