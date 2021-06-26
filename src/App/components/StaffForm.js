@@ -77,7 +77,6 @@ const StaffForm = ({
 StaffForm.propTypes = {
   fullName: PropTypes.string.isRequired,
   profileImage: PropTypes.string,
-  adminAccess: PropTypes.string,
   firebaseKey: PropTypes.string,
   setStaff: PropTypes.func,
 };

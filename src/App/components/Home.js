@@ -17,7 +17,7 @@ export default function Home() {
     position: 'relative'
   }}
 >
-  <h1>Featured Products</h1>
+  <h1 style ={{ textAlign: 'center' }}>Featured Products</h1>
   <Carousel
     additionalTransfrom={0}
     arrows
