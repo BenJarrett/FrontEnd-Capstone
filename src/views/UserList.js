@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { getWishlist } from '../helpers/data/UserWishListData';
 import WishlistCard from '../App/components/WishListCard';
+import WishlistHeader from '../App/components/WishlistHeader';
 
 function CurrentList({
   user
@@ -15,7 +16,7 @@ function CurrentList({
 
   return (
     <div className="this">
-    <h1>Your List</h1>
+      <WishlistHeader/>
       <div className="card-container">
       {wishlists.map((productInfo) => (
        <WishlistCard
