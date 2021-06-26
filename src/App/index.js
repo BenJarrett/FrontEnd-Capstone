@@ -1,37 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import './App.scss';
+import NavBar from './components/NavBar';
+import Routes from '../helpers/Routes';
+import { createUser, getUserbyUid } from '../helpers/data/userData';
 
 function App() {
-  const [domWriting, setDomWriting] = useState('Nothing Here!');
-
-  const handleClick = (e) => {
-    console.warn(`You clicked ${e.target.id}`);
-    setDomWriting(`You clicked ${e.target.id}! Check the Console!`);
-  };
-
+  const [user, setUser] = useState(null);
+  const [admin, setAdmin] = useState(null);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed) {
+        const userInfoObj = {
+          fullName: authed.displayName,
+          profileImage: authed.photoURL,
+          uid: authed.uid,
+          user: authed.email.split('@gmail.com')[0]
+        };
+        getUserbyUid(authed.uid).then((response) => {
+          if (Object.values(response.data).length === 0) {
+            userInfoObj.adminAccess = false;
+            createUser(userInfoObj).then((resp) => setUser(resp));
+          } if (Object.values(response.data)[0].adminAccess === true) {
+            userInfoObj.adminAccess = true;
+            setUser(userInfoObj);
+            setAdmin(userInfoObj);
+          } if (Object.values(response.data)[0].adminAccess === false) {
+            userInfoObj.adminAccess = false;
+            setUser(userInfoObj);
+          }
+        });
+      } else if (user || user === null) {
+        setUser(false);
+        setAdmin(false);
+      }
+    });
+  }, []);
+  console.warn(user, admin);
   return (
-    <div className='App'>
-      <h2>INSIDE APP COMPONENT</h2>
-      <div>
-        <button
-          id='this-button'
-          className='btn btn-info'
-          onClick={handleClick}
-        >
-          I am THIS button
-        </button>
-      </div>
-      <div>
-        <button
-          id='that-button'
-          className='btn btn-primary mt-3'
-          onClick={handleClick}
-        >
-          I am THAT button
-        </button>
-      </div>
-      <h3>{domWriting}</h3>
-    </div>
+    <>
+      <Router>
+      <NavBar
+      user={user}
+      admin={admin} />
+      <Routes
+      user={user}
+      admin={admin} />
+      </Router>
+    </>
   );
 }
 

@@ -1,0 +1,47 @@
+{
+  "-McQSoKdm8QNxGq70zFv": {
+    "firebaseKey": "-McQSoKdm8QNxGq70zFv",
+    "user_first": "Verge",
+    "user_last": "Dollman",
+    "email": "vdollman0@sakura.ne.jp",
+    "listId": 1,
+    "uid": "",
+    "admin": false
+  },
+  "-McQSoKf0qvrBUp9YJ6e": {
+    "firebaseKey": "-McQSoKf0qvrBUp9YJ6e",
+    "user_first": "Dare",
+    "user_last": "Wrintmore",
+    "email": "dwrintmore1@imdb.com",
+    "listId": 2,
+    "uid": "",
+    "admin": false
+  },
+  "-McQSoKhURCzQ--BiXKi": {
+    "firebaseKey": "-McQSoKhURCzQ--BiXKi",
+    "user_first": "Barney",
+    "user_last": "Jiggle",
+    "email": "bjiggle2@sbwire.com",
+    "listId": 3,
+    "uid": "",
+    "admin": false
+  },
+  "-McQSoKjYZsLWMuL-HNG": {
+    "firebaseKey": "-McQSoKjYZsLWMuL-HNG",
+    "user_first": "Anastasie",
+    "user_last": "Roycraft",
+    "email": "aroycraft3@admin.ch",
+    "listId": 4,
+    "uid": "",
+    "admin": true
+  },
+  "-McQSoKmRDdvXCx2wVdm": {
+    "firebaseKey": "-McQSoKmRDdvXCx2wVdm",
+    "user_first": "Angelita",
+    "user_last": "Minocchi",
+    "email": "aminocchi4@taobao.com",
+    "listId": 5,
+    "uid": "",
+    "admin": true
+  }
+}

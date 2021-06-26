@@ -1,0 +1,14 @@
+.nav-bar {
+  display: flex;
+  background-color: #333333;
+  justify-content: center;
+}
+
+.nav-link {
+  color: rgb(211, 211, 211) !important;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  font-size: 1.1em;
+}
