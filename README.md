@@ -1,6 +1,6 @@
 
 ## Front-end Capstone
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e9addd5f-4a90-4276-a9d4-5e8b5e21261d/deploy-status)](https://bj-front-end-capstone-instant-inventory.netlify.app/
+![Netlify Status](https://api.netlify.com/api/v1/badges/e9addd5f-4a90-4276-a9d4-5e8b5e21261d/deploy-status)](https://bj-front-end-capstone-instant-inventory.netlify.app/
 
 ### Project Name
 "Instant Inventory
