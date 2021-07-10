@@ -3,7 +3,7 @@
 ![Netlify Status](https://api.netlify.com/api/v1/badges/e9addd5f-4a90-4276-a9d4-5e8b5e21261d/deploy-status)](https://bj-front-end-capstone-instant-inventory.netlify.app/
 
 ### Project Name
-"Instant Inventory
+ Instant Inventory
 ### Overview
 This application is meant to be a one stop shop for a buisiness not to showcase their products and have authenitcated users create wishlists of their items and doubles as a quick and easy inventory system. The Admin can add, edit, and delete their products being showcased to customers, as well as add, edit, and delete their Storefront and Warehouse indiviually. Each item show it's location in either the storefront or warehouse with a simple grid system. This grid is set by Aisle, Bay, and Level. 
 ### Personal Motivation
