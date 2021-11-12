@@ -33,7 +33,7 @@ const StaffPickCard = ({
   const [editing, setEditing] = useState(false);
   const [adding, setAdding] = useState(false);
 
-  console.warn(firebaseKey);
+  // console.warn(firebaseKey);
   const handleClick = (fbKey, type) => {
     switch (type) {
       case 'delete':
@@ -47,7 +47,7 @@ const StaffPickCard = ({
         setAdding((prevState) => !prevState);
         break;
       default:
-        console.warn('No Prodcuts picked by Staff');
+        // console.warn('No Prodcuts picked by Staff');
     }
   };
   const editView = (fbKey) => (

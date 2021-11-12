@@ -38,7 +38,7 @@ function App() {
       }
     });
   }, []);
-  console.warn(user, admin);
+  // console.warn(user, admin);
   return (
     <>
       <Router>

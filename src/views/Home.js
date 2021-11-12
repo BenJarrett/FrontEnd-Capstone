@@ -6,7 +6,6 @@ function HomePage() {
   return (
     <>
     <Home />
-
     </>
   );
 }

@@ -46,7 +46,7 @@ const OnSaleProudctsCard = ({
         setAdding((prevState) => !prevState);
         break;
       default:
-        console.warn('No Products on Sale');
+        // console.warn('No Products on Sale');
     }
   };
   const editView = (fbKey) => (

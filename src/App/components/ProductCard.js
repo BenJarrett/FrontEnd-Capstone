@@ -49,7 +49,7 @@ const ProudctsCard = ({
         setAdding((prevState) => !prevState);
         break;
       default:
-        console.warn('No Projects');
+        // console.warn('No Projects');
     }
   };
   const editView = (fbKey) => (
@@ -63,12 +63,14 @@ const ProudctsCard = ({
       </Button>
     </div>
   );
+
   const userView = (fbKey) => (
     <div className='add-wishlist'>
       <Button style={{ color: 'black', backgroundColor: 'transparent', border: 'transparent' }}
        onClick={() => handleClick(fbKey, 'add-to-wishlist')}><i className="fas fa-plus"></i></Button>
     </div>
   );
+
   return (
         <Card>
           <CardBody>

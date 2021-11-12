@@ -46,6 +46,7 @@ const ProductsForm = ({
     staffPick: staffPick || false,
     firebaseKey: firebaseKey || null
   });
+
   const history = useHistory();
 
   const handleInputChange = (e) => {

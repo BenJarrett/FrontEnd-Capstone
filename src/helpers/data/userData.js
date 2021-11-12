@@ -21,7 +21,7 @@ const createUser = (userObj) => new Promise((resolve, reject) => {
 });
 
 const getUserbyUid = (uid) => new Promise((resolve, reject) => {
-  console.warn(uid);
+  // console.warn(uid);
   axios.get(`${dbURL}/user.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => resolve(response))
     .catch((error) => reject(error));

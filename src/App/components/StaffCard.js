@@ -33,24 +33,22 @@ const StaffCard = ({
         updateAdmin(fbKey).then(() => {
           const adminObj = { adminAccess: true };
           // eslint-disable-next-line
-          window.alert('Do you want to grant this user admin access?');
+          window.alert('Access Granted!');
           updateAdminAccess(fbKey, adminObj);
           // eslint-disable-next-line
-          window.alert('Access Granted!');
         });
         break;
       case 'lose-admin':
         updateAdmin(fbKey).then(() => {
           const adminObj = { adminAccess: false };
           // eslint-disable-next-line
-          window.alert('Do you want to remove admin access?');
+          window.alert('Access Revoked!');
           updateAdminAccess(fbKey, adminObj);
           // eslint-disable-next-line
-          window.alert('Access Revoked!');
         });
         break;
       default:
-        console.warn('No Staff Members');
+        // console.warn('No Staff Members');
     }
   };
   const editView = (fbKey) => (
