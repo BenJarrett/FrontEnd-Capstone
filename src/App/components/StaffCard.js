@@ -4,6 +4,7 @@ import {
   Button,
   CardTitle,
   CardBody,
+  CardText,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { removeStaffMember } from '../../helpers/data/staffData';
@@ -73,10 +74,12 @@ const StaffCard = ({
   return (
         <Card>
           <CardBody>
-         <CardTitle className="staffCardTitle" tag="h5">{fullName}</CardTitle>
+         <CardTitle className="text-center" tag="h5" >{fullName}</CardTitle>
+         {/* <CardTitle className="staffCardTitle" tag="h5">{ adminAccess === true ? 'Admin' : 'User' }</CardTitle> */}
          <hr></hr>
          </CardBody>
          <img width="100%" src={profileImage} className="photo" alt="Card image cap" />
+         <CardText className="text-center mt-3 " tag="h6">{ adminAccess === true ? 'Admin' : 'User' } {adminAccess}</CardText>
          <CardBody>
          <hr></hr>
          { admin && editView(firebaseKey) }
