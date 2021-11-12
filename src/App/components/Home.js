@@ -14,10 +14,13 @@ export default function Home() {
       <div className="home-carousel"
   style={{
     paddingBottom: '30px',
+    paddingTop: '150px',
     position: 'relative'
   }}
 >
-  <h1 style ={{ textAlign: 'center' }}>Featured Products</h1>
+  <h1 style ={{ textAlign: 'center' }} >Featured Products</h1>
+<hr ></hr>
+
   <Carousel
     additionalTransfrom={0}
     arrows

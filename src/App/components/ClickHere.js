@@ -6,9 +6,11 @@ export default function ClickHere() {
       <div className="mission-image">
         <div className="mission-text">
           <h2>Get Started</h2>
-        <h4>Click here to get started</h4>
+          <hr ></hr>
+        <h4>Click here to view our procuct catalog!</h4>
         </div>
         <div className="home-page-button">
+          <br />
         <Button href='/all-products'> See Complete Catalog</Button>
         </div>
       </div>
