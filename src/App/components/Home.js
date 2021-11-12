@@ -14,7 +14,7 @@ export default function Home() {
       <div className="home-carousel"
   style={{
     paddingBottom: '30px',
-    paddingTop: '150px',
+    paddingTop: '80px',
     position: 'relative'
   }}
 >
